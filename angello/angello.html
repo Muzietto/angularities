@@ -30,7 +30,7 @@
         <div class="story" 
           ng-repeat="story in stories"
           ng-click="setCurrentStory(story)">
-          <h4>{{story.title}}</h4>
+          <h4 ng-bind="story.title"></h4>
           <p>{{story.description}}</p>
       
         </div>
@@ -40,7 +40,7 @@
         </a>
       </div>
 
-      <div class="span6 col-md-6 body-content">
+      <div class="span6 col-md-3 body-content">
         <h2>Story</h2>
         <form class=""form-horizontal">
           <div class="control-group">
@@ -110,7 +110,16 @@
         </form>
       
       </div>
-    </div>
+
+      <div class="small-12 large-2 columns col-lg-2" ng-repeat="status in statuses">
+        <h3 ng-bind="status.name"></h3>
+        <article class="large-12 columns cardWrapper"
+                 ng-repeat="story in stories | filter:{status:status.name}"
+                 ng-click="setCurrentStory(story)">
+          <h4>{{story.title}}</h4>
+          <p>{{story.description}}</p>
+        </article>
+      </div>
   
 
   </body>
