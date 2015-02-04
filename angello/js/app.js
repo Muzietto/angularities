@@ -1,11 +1,11 @@
 var myModule = angular.module('Angello', []);
 
 myModule.controller('MainCtrl', 
-  function($scope, angelloModel, angelloHelper) {
+  function($scope, angelloModel, angelloHelper, STORY_STATUSES) {
     $scope.currentStory;
     $scope.currentType;
     $scope.currentStatus;
-    $scope.statuses = angelloModel.getStatuses();
+    $scope.statuses = STORY_STATUSES;
     $scope.statusesIndex = angelloHelper.buildIndex($scope.statuses, 'name');
     $scope.types = angelloModel.getTypes();
     $scope.typesIndex = angelloHelper.buildIndex($scope.types, 'name');
@@ -32,19 +32,17 @@ myModule.controller('MainCtrl',
   });
 
 // HELPERS
+myModule.value('STORY_STATUSES',[
+    {name: 'Back Log'},
+    {name: 'To Do'},
+    {name: 'In Progress'},
+    {name: 'Code Review'},
+    {name: 'QA Review'},
+    {name: 'Verified'},
+    {name: 'Done'}
+  ]);
+
 myModule.factory('angelloModel', function() {
-  function getStatuses() {
-    var result = [
-      {name: 'Back Log'},
-      {name: 'To Do'},
-      {name: 'In Progress'},
-      {name: 'Code Review'},
-      {name: 'QA Review'},
-      {name: 'Verified'},
-      {name: 'Done'}
-    ];
-    return result;
-  }
   function getTypes() {
     var result = [
       {name: 'Feature'},
@@ -67,7 +65,6 @@ myModule.factory('angelloModel', function() {
   }
   
   return {
-    getStatuses: getStatuses,
     getStories: getStories,
     getTypes: getTypes
   };
