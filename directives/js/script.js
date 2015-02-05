@@ -24,4 +24,17 @@ directivesApp.controller('docsRestrictDirectiveController', function($scope){
     }
   })
 
+directivesApp.controller('docsIsolateScopeDirectiveController', function($scope){
+    $scope.naomi = { name: 'Naomi', address: 'casa sua nella var' };
+    $scope.igor = { name: 'Igor', address: 'casa mia nella var' };
+  })
+  .directive('myCustomerTagWithInfo', function(){
+    return { 
+      restrict: 'E',
+      scope: {
+        customer: '=instance'
+      },
+      templateUrl: 'html/my-customer.html'
+    }
+  })
   
