@@ -1,4 +1,4 @@
-<html ng-app="directives">
+<html>
   <head>
     <title>DIRECTIVES</title>
     
@@ -13,8 +13,17 @@
     </head>
   <body>
   
-    <div ng-controller="Controller">
-      <div my-customer></div>
-    </div>
+    <section ng-app="docsTemplateUrlDirective">
+      <div ng-controller="Controller">
+        <div my-customer></div>
+      </div>
+    </section>
+
+    <section ng-app="docsRestrictDirective">
+      <div ng-controller="Controller2">
+        <my-customer></my-customer>
+      </div>
+    </section>
+
   </body>
 </html>
