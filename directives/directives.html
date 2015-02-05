@@ -27,5 +27,11 @@
       <my-customer-tag-with-info instance="igor"></my-customer-tag-with-info>
     </div>
 
+    <div ng-controller="docsTimeDirectiveController">
+      Date Format: <input ng-model="myDateFormat"> <br/>
+      Current time is: <span my-current-time="myDateFormat"></span>
+    </div>
+
+
   </body>
 </html>
