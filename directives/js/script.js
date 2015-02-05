@@ -1,6 +1,7 @@
 
-angular.module('docsTemplateUrlDirective', [])
-  .controller('Controller', function($scope){
+var directivesApp = angular.module('directiveSandbox', []);
+
+directivesApp.controller('docsTemplateUrlDirectiveController', function($scope){
     $scope.customer = {
       name: 'Naomi',
       address: 'casa sua nello attributello'
@@ -9,15 +10,14 @@ angular.module('docsTemplateUrlDirective', [])
   .directive('myCustomer', function(){
     return { templateUrl: 'html/my-customer.html'}
   })
-  
-angular.module('docsRestrictDirective', [])
-  .controller('Controller2', function($scope){
+
+directivesApp.controller('docsRestrictDirectiveController', function($scope){
     $scope.customer = {
       name: 'Naomi',
       address: 'casa sua nel tag'
     }
   })
-  .directive('myCustomer', function(){
+  .directive('myCustomerTag', function(){
     return { 
       restrict: 'E',
       templateUrl: 'html/my-customer.html'

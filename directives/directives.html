@@ -11,19 +11,15 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     </head>
-  <body>
+  <body ng-app="directiveSandbox">
   
-    <section ng-app="docsTemplateUrlDirective">
-      <div ng-controller="Controller">
-        <div my-customer></div>
-      </div>
-    </section>
+    <div ng-controller="docsTemplateUrlDirectiveController">
+      <div my-customer></div>
+    </div>
 
-    <section ng-app="docsRestrictDirective">
-      <div ng-controller="Controller2">
-        <my-customer></my-customer>
-      </div>
-    </section>
+    <div ng-controller="docsRestrictDirectiveController">
+      <my-customer-tag></my-customer-tag>
+    </div>
 
   </body>
 </html>
