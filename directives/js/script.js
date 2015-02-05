@@ -54,7 +54,7 @@ directivesApp.controller('docsTimeDirectiveController', function($scope){
     function link($scope, element, attrs){
       var _format, timeoutId
       ;
-      
+
       function updateTime(){
         element.text(dateFilter(new Date, _format));
       }
@@ -63,22 +63,53 @@ directivesApp.controller('docsTimeDirectiveController', function($scope){
         _format = value;
         updateTime();
       });
-      
+
       element.on('$destroy', function(){
         $interval.cancel(timeoutId);
       });
-      
+
       // start UI update process; save timeoutId for canceling
       timeoutId = $interval(function(){
         updateTime(); // update DOM
       }, 1000);
     }
-    
+
     return {
       link: link
     }
   });
 
+directivesApp.controller('docsTransclusionDirectiveController', function($scope){
+    $scope.name = 'Igor';
+  })
+  .directive('myDialog', function(){
+    return { 
+      restrict: 'E',
+      transclude: true,
+      templateUrl: 'html/my-dialog.html'
+    }
+  })
+  
+directivesApp.controller('docsIsoFnBindExampleController', function($scope, $timeout){
+    $scope.name = 'Luciano';
+    $scope.hideDialog = function(){
+      $scope.dialogIsHidden = true;
+      $timeout(function(){
+        $scope.dialogIsHidden = false;
+      }, 2000);
+    }
+  })
+  .directive('myDialogWithButtons', function(){
+    return { 
+      restrict: 'E',
+      transclude: true,
+      scope: {
+        'close': '&onClose'
+      },
+      templateUrl: 'html/my-dialog-close.html'
+    }
+  })
+  
 
 
 

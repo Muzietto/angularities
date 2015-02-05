@@ -32,6 +32,15 @@
       Current time is: <span my-current-time="myDateFormat"></span>
     </div>
 
+    <div ng-controller="docsTransclusionDirectiveController">
+      <style>.alert {color:red;margin-top:30px;}</style>
+      <my-dialog>Check out the contents, {{name}}!</my-dialog>
+    </div>
+
+    <div ng-controller="docsIsoFnBindExampleController">
+      <style>.alert {color:red;margin-top:30px;}</style>
+      <my-dialog-with-buttons ng-hide="dialogIsHidden" on-close="hideDialog()">Check out the contents, {{name}}!</my-dialog-with-buttons>
+    </div>
 
   </body>
 </html>
