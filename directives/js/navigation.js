@@ -36,6 +36,39 @@ navigationApp.controller('template2Controller', function($scope){
   })
   
 
+navigationApp.controller('template3Controller', function($scope){
+    $scope.currentCountry;
+    $scope.allerta = function() {alert($scope.currentCountry)};
+    
+    $scope.countries = {
+      AR: {
+        name: "Argentina",
+        mcc: 722,
+        pricepoints: [
+          {amount:100, credit_providers:[{mnc:310,rid:'mop/AR/Claro'}]},
+          {amount:200, credit_providers:[{mnc:311,rid:'mop/AR/Vodafone'}]},
+        ]
+      },
+      MX: {
+        name: "Mexico",
+        mcc: 9222,
+        pricepoints: [
+          {amount:50, credit_providers:[{mnc:3,rid:'mtp/MX/Vodafone'}]},
+        ]
+      }
+    }
+  })
+  .directive('myCountry', function(/* no globals to use */){
+    return {
+    /*  link: function(scope, elem, attrs) { // attrs = {myCountry:'countryData'}
+        alert(attrs.myCountry)
+      }*/
+    }
+  })
+  .directive('pricepoint', function(){
+    return { }
+  })
+
 /*
 directivesApp.controller('docsRestrictDirectiveController', function($scope){
     $scope.customer = {

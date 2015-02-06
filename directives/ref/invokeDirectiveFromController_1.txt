@@ -1,0 +1,62 @@
+<div ng-controller="MyCtrl">
+    <h4>Joe attaches a scope function</h4>
+    <button ng-click="sayHiJoe()">Hey Joe!</button> | <joe></joe>
+    <hr />
+    <h4>Bob watches an attribute</h4>
+    <input ng-model="bobText"><bob txt="bobText"></bob>
+    <hr />
+    <h4>Sally calls an expression given in attribute</h4>
+    <sally on-stuff="whenStuff()"></sally>
+    <br />
+    {{stuff}}
+</div>
+
+var app=angular.module('myApp', []);
+
+function MyCtrl($scope) {
+    $scope.stuff = 'stuff';
+    
+    $scope.sayHiJoe = function() {
+        $scope.heyJoe();
+    };
+    
+    $scope.whenStuff = function() {
+        $scope.stuff += " " + $scope.stuff.length;
+    };
+}
+
+app.directive('joe', function() {
+    return {
+        restrict: 'E',
+        link: function(scope, elm, attrs) {
+            scope.heyJoe = function() {
+                console.log('k');
+                elm.text((elm.text()||"hey joe")+"!");
+            };
+        }
+    };
+});
+
+app.directive('bob', function() {
+    return {
+        restrict: 'E',
+        link: function(scope, elm, attrs) {
+            scope.$watch(attrs.txt, function(val) {
+                elm.text(val);
+            });
+        }
+    };
+});
+
+
+app.directive('sally', function($timeout) {
+    return {
+        restrict: 'E',
+        link: function(scope, elm, attrs) {
+            (function doIt() {
+                scope.$eval(attrs.onStuff);
+                $timeout(doIt,1000);
+            })();
+        }
+    };
+});

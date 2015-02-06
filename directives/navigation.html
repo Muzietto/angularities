@@ -19,11 +19,15 @@
       </div>
     </div>
 
-    <div ng-controller="template2Controller">
-      <my-country class="" 
-           ng-repeat="(countryCode, countryData) in countries"
-           ng-include="'country.tmpl'">
-      </my-country>
+    <div ng-controller="template3Controller">
+      <p>selected country is : {{currentCountry}}</p>
+      <select id="inputCountry"
+        ng-model="currentCountry"
+        ng-change=""
+        ng-options="countryData.name for (countryCode, countryData) in countries track by countryCode">
+        <!-- NB - countryCode becomes the option VALUE regardless of which is the chosen label -->
+        <!-- my-country="countryData" inside the tag won't work: link is executed three times during initialisation -->
+      </select>
     </div>
     
     <script type="text/ng-template" id="country.tmpl">
@@ -44,5 +48,13 @@
       <label ng-bind="pricepoint.amount"></label>
       <p>ecco qui {{pricepoint.amount}}</p>
     </script>
-  </body>
+
+    <div ng-controller="template2Controller">
+      <my-country class="" 
+           ng-repeat="(countryCode, countryData) in countries"
+           ng-include="'country.tmpl'">
+      </my-country>
+    </div>
+
+    </body>
 </html>
