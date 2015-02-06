@@ -1,16 +1,42 @@
 
-var directivesApp = angular.module('directiveSandbox', []);
+var navigationApp = angular.module('navigationSandbox', []);
 
-directivesApp.controller('docsTemplateUrlDirectiveController', function($scope){
-    $scope.customer = {
-      name: 'Naomi',
-      address: 'casa sua nello attributello'
-    }
+navigationApp.controller('template1Controller', function($scope){
+    $scope.customers = [
+      { name: 'Naomi', address: 'casa sua nello attributello' },
+      { name: 'Naomi22', address: 'casa sua qqqnello attributello' }
+    ]
   })
   .directive('myCustomer', function(){
-    return { templateUrl: 'html/my-customer.html'}
+    return { template: 'Name: {{customer.name}} Address: {{customer.address}}' }
   })
 
+navigationApp.controller('template2Controller', function($scope){
+    $scope.countries = {
+      AR: {
+        mcc: 722,
+        pricepoints: [
+          {amount:100, credit_providers:[{mnc:310,rid:'mop/AR/Claro'}]},
+          {amount:200, credit_providers:[{mnc:311,rid:'mop/AR/Vodafone'}]},
+        ]
+      },
+      MX: {
+        mcc: 9222,
+        pricepoints: [
+          {amount:50, credit_providers:[{mnc:3,rid:'mtp/MX/Vodafone'}]},
+        ]
+      }
+    }
+  })
+  .directive('myCountry', function(){
+    return { }
+  })
+  .directive('pricepoint', function(){
+    return { }
+  })
+  
+
+/*
 directivesApp.controller('docsRestrictDirectiveController', function($scope){
     $scope.customer = {
       name: 'Naomi',
@@ -35,12 +61,6 @@ directivesApp.controller('docsIsolateScopeDirectiveController', function($scope)
         customer: '=instance'
       },
       templateUrl: 'html/my-customer.html'
-/*
-<article>
-  <p>{{customer.name}}</p>
-  <p>{{customer.address}}</p>
-<article>
-*/      
     }
   })
   
@@ -50,14 +70,15 @@ directivesApp.controller('docsTimeDirectiveController', function($scope){
   // we will use the $interval service to call a handler on a regular basis
   // dateFilter is a custom Angular functions (blaaahhh.....)
   .directive('myCurrentTime', function($interval, dateFilter){
-    /* directives that want to modify the DOM typically use the link option. 
+//    /* directives that want to modify the DOM typically use the link option. 
        link takes a function with the following signature:
        function link($scope, element, attrs) { ... }
        - element is the jqLite-wrapped element that 
        this directive 'myCurrentTime' matches
        - attrs = {myCurrentTime:'myDateFormat'}
-    */
-    function link($scope, element, attrs){
+/*
+   
+   function link($scope, element, attrs){
       var _format, timeoutId
       ;
 
@@ -115,22 +136,4 @@ directivesApp.controller('docsIsoFnBindExampleController', function($scope, $tim
       templateUrl: 'html/my-dialog-close.html'
     }
   })
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  */
