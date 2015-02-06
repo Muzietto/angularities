@@ -32,7 +32,7 @@ directivesApp.controller('docsIsolateScopeDirectiveController', function($scope)
     return { 
       restrict: 'E',
       scope: {
-        customer: '=instance'
+        customer: '=' // attribute 'customer' maps to templatevar 'customer'
       },
       templateUrl: 'html/my-customer.html'
 /*
@@ -57,7 +57,7 @@ directivesApp.controller('docsTimeDirectiveController', function($scope){
        this directive 'myCurrentTime' matches
        - attrs = {myCurrentTime:'myDateFormat'}
     */
-    function link($scope, element, attrs){
+    function linker(scope, element, attrs){
       var _format, timeoutId
       ;
 
@@ -65,7 +65,7 @@ directivesApp.controller('docsTimeDirectiveController', function($scope){
         element.text(dateFilter(new Date, _format));
       }
 
-      $scope.$watch(attrs.myCurrentTime, function(value){
+      scope.$watch(attrs.myCurrentTime, function(value){
         _format = value;
         updateTime();
       });
@@ -81,7 +81,7 @@ directivesApp.controller('docsTimeDirectiveController', function($scope){
     }
 
     return {
-      link: link
+      link: linker
     }
   });
 
