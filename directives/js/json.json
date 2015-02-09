@@ -1,0 +1,376 @@
+{
+    "countries": [
+        {
+            "mcc": "268", 
+            "name": "Portugal", 
+            "prices": [
+                {
+                    "amount": "0.0000", 
+                    "connectivities": [
+                        {
+                            "credit_providers": [
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "06", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/TMN", 
+                                    "routes": [
+                                        {
+                                            "lane": "68999", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68985", 
+                                            "type_of_billing": "MT"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "01", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Vodafone", 
+                                    "routes": [
+                                        {
+                                            "lane": "68999", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68985", 
+                                            "type_of_billing": "MT"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "03", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Optimus", 
+                                    "routes": [
+                                        {
+                                            "lane": "68999", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68985", 
+                                            "type_of_billing": "MT"
+                                        }
+                                    ]
+                                }
+                            ], 
+                            "rid": "Mobileviewpt"
+                        }, 
+                        {
+                            "credit_providers": [
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "06", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/TMN", 
+                                    "routes": [
+                                        {
+                                            "lane": "68636", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68638", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68637", 
+                                            "type_of_billing": "MT"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "01", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Vodafone", 
+                                    "routes": [
+                                        {
+                                            "lane": "68636", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68638", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68637", 
+                                            "type_of_billing": "MT"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "03", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Optimus", 
+                                    "routes": [
+                                        {
+                                            "lane": "68636", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68638", 
+                                            "type_of_billing": "MT"
+                                        }, 
+                                        {
+                                            "lane": "68637", 
+                                            "type_of_billing": "MT"
+                                        }
+                                    ]
+                                }
+                            ], 
+                            "rid": "Mobiletrendpt"
+                        }
+                    ], 
+                    "currency": "EUR", 
+                    "type": "point"
+                }, 
+                {
+                    "amount": "2.1000", 
+                    "connectivities": [
+                        {
+                            "credit_providers": [
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "06", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/TMN", 
+                                    "routes": [
+                                        {
+                                            "lane": "68636", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "01", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Vodafone", 
+                                    "routes": [
+                                        {
+                                            "lane": "68636", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "03", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Optimus", 
+                                    "routes": [
+                                        {
+                                            "lane": "68636", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }
+                            ], 
+                            "rid": "Mobiletrendpt"
+                        }
+                    ], 
+                    "currency": "EUR", 
+                    "type": "point"
+                }, 
+                {
+                    "amount": "2.4600", 
+                    "connectivities": [
+                        {
+                            "credit_providers": [
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "06", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/TMN", 
+                                    "routes": [
+                                        {
+                                            "lane": "68999", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "01", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Vodafone", 
+                                    "routes": [
+                                        {
+                                            "lane": "68999", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "03", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Optimus", 
+                                    "routes": [
+                                        {
+                                            "lane": "68999", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }
+                            ], 
+                            "rid": "Mobileviewpt"
+                        }
+                    ], 
+                    "currency": "EUR", 
+                    "type": "point"
+                }, 
+                {
+                    "amount": "3.0000", 
+                    "connectivities": [
+                        {
+                            "credit_providers": [
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "06", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/TMN", 
+                                    "routes": [
+                                        {
+                                            "lane": "68637", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "01", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Vodafone", 
+                                    "routes": [
+                                        {
+                                            "lane": "68637", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "03", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Optimus", 
+                                    "routes": [
+                                        {
+                                            "lane": "68637", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }
+                            ], 
+                            "rid": "Mobiletrendpt"
+                        }
+                    ], 
+                    "currency": "EUR", 
+                    "type": "point"
+                }, 
+                {
+                    "amount": "4.0000", 
+                    "connectivities": [
+                        {
+                            "credit_providers": [
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "06", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/TMN", 
+                                    "routes": [
+                                        {
+                                            "lane": "68638", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "01", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Vodafone", 
+                                    "routes": [
+                                        {
+                                            "lane": "68638", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "03", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Optimus", 
+                                    "routes": [
+                                        {
+                                            "lane": "68638", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }
+                            ], 
+                            "rid": "Mobiletrendpt"
+                        }
+                    ], 
+                    "currency": "EUR", 
+                    "type": "point"
+                }, 
+                {
+                    "amount": "6.1500", 
+                    "connectivities": [
+                        {
+                            "credit_providers": [
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "06", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/TMN", 
+                                    "routes": [
+                                        {
+                                            "lane": "68985", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "01", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Vodafone", 
+                                    "routes": [
+                                        {
+                                            "lane": "68985", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "daily_spending_limit": 50, 
+                                    "mnc": "03", 
+                                    "monthly_spending_limit": 300, 
+                                    "rid": "mop/PT/Optimus", 
+                                    "routes": [
+                                        {
+                                            "lane": "68985", 
+                                            "type_of_billing": "MO"
+                                        }
+                                    ]
+                                }
+                            ], 
+                            "rid": "Mobileviewpt"
+                        }
+                    ], 
+                    "currency": "EUR", 
+                    "type": "point"
+                }
+            ], 
+            "rid": "PT"
+        }
+    ]
+}

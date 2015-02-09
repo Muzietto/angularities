@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>NAVIGATION</title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
+    <script type="text/javascript" src="js/navigation2.js"></script>
+    </head>
+  <body ng-app="navigationSandbox">
+
+    <div ng-controller="template3Controller">
+      <select id="inputCountry"
+        ng-model="currentCountry"
+        ng-change="expand(currentCountry)"
+        ng-options="country.name for country in countries track by country.mcc">
+        <!-- TODO: ng-change must invoke directive myCountry -->
+        <!-- NB - country.mcc becomes the option VALUE regardless of which is the chosen label -->
+        <!-- my-country="countryData" inside the tag won't work: link is executed three times during initialisation -->
+      </select>
+      <p>selected country is : {{currentCountry}}</p>
+    </div>
+    
+    <script type="text/ng-template" id="country.tmpl">
+      <article>
+        <h3 ng-bind="countryData.name"></h3>
+        <p ng-bind="countryData.mcc"></p>
+        <select id="inputPrice"
+          ng-model="currentPrice"
+          ng-change="expand(currentPrice)"
+          ng-options="price.amount for price in prices track by price.amount">
+          <!-- TODO: ng-change must invoke directive myPrice -->
+        </select>
+        <p>selected price is : {{currentPrice}}</p>
+      </article>
+    </script>
+
+    <script type="text/ng-template" id="price.tmpl">
+      <label ng-bind="price.amount"></label>
+      <p>ecco qui {{price.amount}}</p>
+      <!-- TODO: put here connectivities' select and repeat behavior as in #inputCountry -->
+    </script>
+
+  </body>
+</html>
