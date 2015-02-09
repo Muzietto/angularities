@@ -26,7 +26,7 @@
     </div>
     
     <script type="text/ng-template" id="country.tmpl">
-      <article>
+      <div class="country-div">
         <h3 ng-bind="countryData.name"></h3>
         <p ng-bind="countryData.mcc"></p>
         <select id="inputPrice"
@@ -36,13 +36,18 @@
           <!-- TODO: ng-change must invoke directive myPrice -->
         </select>
         <p>selected price is : {{currentPrice}}</p>
-      </article>
+        <div id="priceAnchor"></div>
+      </div>
     </script>
 
     <script type="text/ng-template" id="price.tmpl">
-      <label ng-bind="price.amount"></label>
-      <p>ecco qui {{price.amount}}</p>
-      <!-- TODO: put here connectivities' select and repeat behavior as in #inputCountry -->
+      <div class="price-div">
+        <label ng-bind="price.amount"></label>
+        <p>selected price is : {{currentPrice}}</p>
+        <!-- TODO: put here connectivities' select and repeat behavior as in #inputCountry -->
+        <p>selected connectivity is : {{currentConnectivity}}</p>
+        <div id="connectivityAnchor"></div>
+      <div>
     </script>
 
   </body>
