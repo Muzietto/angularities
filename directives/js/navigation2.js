@@ -559,122 +559,33 @@ var navigationApp = angular.module('navigationSandbox', []);
 navigationApp.controller('template3Controller', function($scope){
     $scope.currentCountry = null; // to be chosen in the select
     $scope.countries = blob.countries;
-    $scope.expand = function(countryData) {
+    $scope.expand = function(rootElement,countryData) {
       // TODO: this function must invoke the chosenCountry directive!!!
-      // passing countryData to its scope
-      alert(countryData.mcc)
+      // passing rootElement/countryData to its scope
+      // alert(countryData.mcc);
+      $rootScope.$broadcast('paintCountry',{
+        countryAnchor: rootElement,
+        countryData: countryData
+      });
+      
     };
     
   })
-  .directive('myCountry', function(/* no globals to use */){
+  .directive('myCountry', function($compile, $templateCache){
+    var template = $templateCache.get('country.tmpl');
+    
+    $scope.$on('paintCountry', function (event, data) {
+      console.log(data.rootElement);
+    });
+    
     return { // link function paints the country widget (name + mcc + prices select)
-    /*  link: function(scope, elem, attrs) { // attrs = {myCountry:'countryData'}
-        alert(attrs.myCountry)
-      }*/
+    link: function(scope, element, attrs) {
+        element.html(template);
+        /*return*/ $compile(element.contents())(scope);
+      },
+    scope: {}
     }
   })
   .directive('myPrice', function(){
     return { }
   })
-
-/*
-directivesApp.controller('docsRestrictDirectiveController', function($scope){
-    $scope.customer = {
-      name: 'Naomi',
-      address: 'casa sua nel tag'
-    }
-  })
-  .directive('myCustomerTag', function(){
-    return { 
-      restrict: 'E',
-      templateUrl: 'html/my-customer.html'
-    }
-  })
-
-directivesApp.controller('docsIsolateScopeDirectiveController', function($scope){
-    $scope.naomi = { name: 'Naomi', address: 'casa sua nella var' };
-    $scope.igor = { name: 'Igor', address: 'casa mia nella var' };
-  })
-  .directive('myCustomerTagWithInfo', function(){
-    return { 
-      restrict: 'E',
-      scope: {
-        customer: '=instance'
-      },
-      templateUrl: 'html/my-customer.html'
-    }
-  })
-  
-directivesApp.controller('docsTimeDirectiveController', function($scope){
-    $scope.myDateFormat = 'MM/dd/yy hh:mm:ss Z';
-  })
-  // we will use the $interval service to call a handler on a regular basis
-  // dateFilter is a custom Angular functions (blaaahhh.....)
-  .directive('myCurrentTime', function($interval, dateFilter){
-//    /* directives that want to modify the DOM typically use the link option. 
-       link takes a function with the following signature:
-       function link($scope, element, attrs) { ... }
-       - element is the jqLite-wrapped element that 
-       this directive 'myCurrentTime' matches
-       - attrs = {myCurrentTime:'myDateFormat'}
-/*
-   
-   function link($scope, element, attrs){
-      var _format, timeoutId
-      ;
-
-      function updateTime(){
-        element.text(dateFilter(new Date, _format));
-      }
-
-      $scope.$watch(attrs.myCurrentTime, function(value){
-        _format = value;
-        updateTime();
-      });
-
-      element.on('$destroy', function(){
-        $interval.cancel(timeoutId);
-      });
-
-      // start UI update process; save timeoutId for canceling
-      timeoutId = $interval(function(){
-        updateTime(); // update DOM
-      }, 1000);
-    }
-
-    return {
-      link: link
-    }
-  });
-
-directivesApp.controller('docsTransclusionDirectiveController', function($scope){
-    $scope.name = 'Igor';
-  })
-  .directive('myDialog', function(){
-    return { 
-      restrict: 'E',
-      transclude: true,
-      templateUrl: 'html/my-dialog.html'
-    }
-  })
-  
-directivesApp.controller('docsIsoFnBindExampleController', function($scope, $timeout){
-    $scope.name = 'Luciano';
-    $scope.hideDialog = function(){
-      $scope.dialogIsHidden = true;
-      $timeout(function(){
-        $scope.dialogIsHidden = false;
-      }, 2000);
-    }
-  })
-  .directive('myDialogWithButtons', function(){
-    return { 
-      restrict: 'E',
-      transclude: true,
-      scope: {
-        'close': '&onClose'
-      },
-      templateUrl: 'html/my-dialog-close.html'
-    }
-  })
-  */

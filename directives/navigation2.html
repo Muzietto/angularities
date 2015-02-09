@@ -16,13 +16,14 @@
     <div ng-controller="template3Controller">
       <select id="inputCountry"
         ng-model="currentCountry"
-        ng-change="expand(currentCountry)"
+        ng-change="expand('countryAnchor',currentCountry)"
         ng-options="country.name for country in countries track by country.mcc">
         <!-- TODO: ng-change must invoke directive myCountry -->
         <!-- NB - country.mcc becomes the option VALUE regardless of which is the chosen label -->
         <!-- my-country="countryData" inside the tag won't work: link is executed three times during initialisation -->
       </select>
       <p>selected country is : {{currentCountry}}</p>
+      <div id="countryAnchor"></div>
     </div>
     
     <script type="text/ng-template" id="country.tmpl">
