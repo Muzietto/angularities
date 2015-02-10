@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Flex Navigation</title>
+
+    <!-- GLOBAL STYLES - Include these on every page. -->
+    <link href="../flex/css/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel="stylesheet" type="text/css">
+    <link href="../flex/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- PAGE LEVEL PLUGIN STYLES -->
+
+    <!-- THEME STYLES - Include these on every page. -->
+    <link href="../flex/css/style.css" rel="stylesheet">
+    <link href="../flex/css/plugins.css" rel="stylesheet">
+
+    <!-- THEME DEMO STYLES - Use these styles for reference if needed. Otherwise they can be deleted. -->
+    <link href="../flex/css/demo.css" rel="stylesheet">
+
+</head>
+
+<body>
+        <!-- begin MAIN PAGE CONTENT -->
+        <div id="page-wrapper">
+            <div class="page-content">
+                <!-- begin PAGE TITLE ROW -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-title">
+                            <h1>Basic Form Elements
+                                <small>Form Features</small>
+                            </h1>
+                            <ol class="breadcrumb">
+                                <li><i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                </li>
+                                <li class="active">Basic Form Elements</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <!-- end PAGE TITLE ROW -->
+
+                <!-- begin MAIN PAGE ROW -->
+                <div class="row">
+                    <!-- begin RIGHT COLUMN -->
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <!-- Form Controls -->
+                            <div class="col-lg-12">
+                                <div class="portlet portlet-red">
+                                    <div class="portlet-heading">
+                                        <div class="portlet-title">
+                                            <h4>Basic Form Controls</h4>
+                                        </div>
+                                        <div class="portlet-widgets">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#formControls"><i class="fa fa-chevron-down"></i></a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div id="formControls" class="panel-collapse collapse in">
+                                        <div class="portlet-body">
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="textInput" class="col-sm-2 control-label">Text Input</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="textInput" placeholder="Placeholder Text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="textInputDisabled" class="col-sm-2 control-label">Disabled Text Input</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="textInputDisabled" placeholder="Placeholder Text" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="textArea" class="col-sm-2 control-label">Text Area</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea class="form-control" id="textArea" placeholder="Placeholder Text"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="textAreaDisabled" class="col-sm-2 control-label">Disabled Text Area</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea class="form-control" id="textAreaDisabled" placeholder="Placeholder Text" disabled></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Checkboxes</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="">Checkbox 1
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="">Checkbox 2
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="">Checkbox 3
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="" disabled>Checkbox Disabled
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Inline Checkboxes</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" value="">Checkbox 1
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" value="">Checkbox 2
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" value="">Checkbox 3
+                                                        </label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" value="" disabled>Checkbox Disabled
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Radio Buttons</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="" checked>Radio 1
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="">Radio 2
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="" disabled>Radio Disabled
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Inline Radio Buttons</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optionsInlineRadios" value="" checked>Radio 1
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optionsInlineRadios" value="">Radio 2
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optionsInlineRadios" value="" disabled>Radio Disabled
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Selects</label>
+                                                    <div class="col-sm-10">
+                                                        <select class="form-control">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Disabled Selects</label>
+                                                    <div class="col-sm-10">
+                                                        <select class="form-control" disabled>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Multiple Selects</label>
+                                                    <div class="col-sm-10">
+                                                        <select multiple class="form-control">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Disabled Multiple Selects</label>
+                                                    <div class="col-sm-10">
+                                                        <select multiple class="form-control" disabled>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Buttons</label>
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="btn btn-default">Sign in</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.portlet -->
+                            </div>
+                            <!-- /.col-lg-12 (nested) -->
+                            <!-- End Form Controls -->
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                    <!-- end RIGHT COLUMN -->
+                </div>
+                <!-- /.row -->
+                <!-- end MAIN PAGE ROW -->
+            </div>
+            <!-- /.page-content -->
+        </div>
+        <!-- /#page-wrapper -->
+        <!-- end MAIN PAGE CONTENT -->
+
+    <!-- GLOBAL SCRIPTS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../flex/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../flex/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../flex/js/plugins/popupoverlay/jquery.popupoverlay.js"></script>
+    <script src="../flex/js/plugins/popupoverlay/defaults.js"></script>
+    <!-- Logout Notification Box -->
+    <div id="logout">
+        <div class="logout-message">
+            <img class="img-circle img-logout" src="../flex/img/profile-pic.jpg" alt="">
+            <h3>
+                <i class="fa fa-sign-out text-green"></i> Ready to go?
+            </h3>
+            <p>Select "Logout" below if you are ready<br> to end your current session.</p>
+            <ul class="list-inline">
+                <li>
+                    <a href="login.html" class="btn btn-green">
+                        <strong>Logout</strong>
+                    </a>
+                </li>
+                <li>
+                    <button class="logout_close btn btn-green">Cancel</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /#logout -->
+    <!-- Logout Notification jQuery -->
+    <script src="../flex/js/plugins/popupoverlay/logout.js"></script>
+    <!-- HISRC Retina Images -->
+    <script src="../flex/js/plugins/hisrc/hisrc.js"></script>
+
+    <!-- PAGE LEVEL PLUGIN SCRIPTS -->
+
+    <!-- THEME SCRIPTS -->
+    <script src="../flex/js/flex.js"></script>
+
+</body>
+
+</html>

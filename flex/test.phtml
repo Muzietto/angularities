@@ -1,0 +1,197 @@
+<?php
+    $today = date('d/m/Y');
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Top query generator</title>
+
+    <!-- PACE LOAD BAR PLUGIN - This creates the subtle load bar effect at the top of the page. -->
+    <link href="css/plugins/pace/pace.css" rel="stylesheet">
+    <script src="js/plugins/pace/pace.js"></script>
+
+    <!-- GLOBAL STYLES - Include these on every page. -->
+    <link href="css/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel="stylesheet" type="text/css">
+    <link href="icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- PAGE LEVEL PLUGIN STYLES -->
+    <link href="css/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet">
+    <link href="css/plugins/bootstrap-tokenfield/tokenfield-typeahead.css" rel="stylesheet">
+    <link href="css/plugins/bootstrap-tokenfield/bootstrap-tokenfield.css" rel="stylesheet">
+    <link href="css/plugins/bootstrap-datepicker/datepicker3.css" rel="stylesheet">
+
+    <!-- THEME STYLES - Include these on every page. -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins.css" rel="stylesheet">
+
+    <!-- THEME DEMO STYLES - Use these styles for reference if needed. Otherwise they can be deleted. -->
+    <link href="css/demo.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- begin MAIN PAGE CONTENT -->
+        <div id="page-wrapper">
+
+            <div class="page-content">
+
+                <div id="outcome">
+                <?php 
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        echo "POST DATA";
+                    } else {
+                        echo "GET DATA";
+                    }
+                ?>
+                </div>
+
+                <!-- begin ADVANCED FORM COMPONENTS MAIN ROW -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="portlet portlet-default">
+                                    <div class="portlet-heading">
+                                        <div class="portlet-title">
+                                            <h4>ONEBIP -> TRANSFER_IN ACTIVATION </h4>
+                                        </div>
+                                        <div class="portlet-widgets">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#validationExamples">
+                                                <i class="fa fa-chevron-down"></i>
+                                            </a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div id="validationExamples" class="panel-collapse collapse in">
+                                        <div class="portlet-body">
+                                            <form class="form-horizontal" id="transferInActivation" role="form">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Countries</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="country_code" class="form-control" required>
+                                                            <option>IT</option>
+                                                            <option>TR</option>
+                                                            <option>ES</option>
+                                                            <option>BR</option>
+                                                            <option>MX</option>
+                                                            <option>No one</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Merchant</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="seller_id" class="form-control" required>
+                                                            <option>Badoo - 4798119</option>
+                                                            <option>Badoo Latam - 4859025</option>
+                                                            <option>Twoo - 6653197</option>
+                                                            <option>Gameforge - 1721</option>
+                                                            <option>Aeriagames - 102886</option>
+                                                            <option>Online Media - 7999047</option>
+                                                            <option>Birdview - 9549601</option>
+                                                            <option>NeoButterfly - 9154441</option>
+                                                            <option>Betica LTD (Burraco) - 16989042</option>
+                                                            <option>No one</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Business model</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="business_model" class="form-control" required>
+                                                            <option>Activations</option>
+                                                            <option>Renewals</option>
+                                                            <option>Pulls</option>
+                                                            <option>No one</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Date from</label>
+                                                    <div class="col-sm-10">
+                                                        <div id="datepicker[1]" class="datepicker">
+                                                            <input class="form-control" type="text" value="<?php echo $today; ?>" >
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">Time from</label>
+                                                    <div class="col-sm-10">
+                                                        <div class="input-append bootstrap-timepicker input-group">
+                                                            <input id="timepicker" class="form-control timepicker" type="text" />
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default add-on" type="button">
+                                                                    <i class="fa fa-clock-o"></i>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label"></label>
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="btn btn-default submit">Generate</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col-lg-12 -->
+                        </div>
+                        <!-- /.row (nested) -->
+
+                    </div>
+                    <!-- /.col-lg-6 -->
+
+                </div>
+                <!-- /.row -->
+                <!-- end ADVANCED FORM COMPONENTS MAIN ROW -->
+
+            </div>
+            <!-- /.page-content -->
+
+        </div>
+        <!-- /#page-wrapper -->
+        <!-- end MAIN PAGE CONTENT -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- GLOBAL SCRIPTS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- jQuery UI added before Bootstrap on this page for no interference -->
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/plugins/popupoverlay/jquery.popupoverlay.js"></script>
+    <script src="js/plugins/popupoverlay/defaults.js"></script>
+    <script src="js/plugins/popupoverlay/logout.js"></script>
+
+    <!-- HISRC Retina Images -->
+    <script src="js/plugins/hisrc/hisrc.js"></script>
+
+    <!-- PAGE LEVEL PLUGIN SCRIPTS -->
+    <script src="js/plugins/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+    <script src="js/plugins/bootstrap-tokenfield/scrollspy.js"></script>
+    <script src="js/plugins/bootstrap-tokenfield/affix.js"></script>
+    <script src="js/plugins/bootstrap-tokenfield/typeahead.min.js"></script>
+    <script src="js/plugins/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+    <script src="js/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="js/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+
+    <!-- THEME SCRIPTS -->
+    <script src="js/flex.js"></script>
+    <script src="js/top_query/advanced-form-demo.js"></script>
+
+</body>
+
+</html>
