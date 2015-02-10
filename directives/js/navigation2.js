@@ -557,35 +557,43 @@ var blob = {
 var navigationApp = angular.module('navigationSandbox', []);
 
 navigationApp.controller('template3Controller', function($scope){
-    $scope.currentCountry = null; // to be chosen in the select
+    $scope.currentCountry = null; // to be chosen in the first select
+    $scope.currentPrice = null; // to be chosen in the second select
+    $scope.currentConnectivity = null; // to be chosen in the third select
     $scope.countries = blob.countries;
-    $scope.expand = function(rootElement,countryData) {
-      // TODO: this function must invoke the chosenCountry directive!!!
-      // passing rootElement/countryData to its scope
-      // alert(countryData.mcc);
-      $rootScope.$broadcast('paintCountry',{
-        countryAnchor: rootElement,
-        countryData: countryData
-      });
-      
-    };
-    
   })
-  .directive('myCountry', function($compile, $templateCache){
-    var template = $templateCache.get('country.tmpl');
-    
-    $scope.$on('paintCountry', function (event, data) {
-      console.log(data.rootElement);
-    });
-    
-    return { // link function paints the country widget (name + mcc + prices select)
-    link: function(scope, element, attrs) {
-        element.html(template);
-        /*return*/ $compile(element.contents())(scope);
-      },
-    scope: {}
+  .directive('countryData',function($templateCache){
+    return {
+      restrict: 'E',
+      template: $templateCache.get('country.tmpl'),
+      transclude: true,
+      link: function(scope,element,attrs){
+        scope.$watch(attrs.name,function(value){
+          if (!value) return;
+          repaint();
+        });
+        function repaint(){
+          element.html(template);
+          $compile(element.contents())(scope);
+        }
+      }
     }
   })
-  .directive('myPrice', function(){
-    return { }
+  .directive('priceData',function($templateCache){
+    return {
+      restrict: 'E',
+      template: $templateCache.get('price.tmpl'),
+      transclude: true,
+      link: function(scope,element,attrs){
+        scope.$watch(attrs.amount,function(value){
+          if (!value) return;
+          repaint();
+        });
+        function repaint(){
+          element.html(template);
+          $compile(element.contents())(scope);
+        }
+      }
+    }
   })
+

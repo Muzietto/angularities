@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>NAVIGATION</title>
+    <title>2 NAVIGATION</title>
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,43 +13,42 @@
     </head>
   <body ng-app="navigationSandbox">
 
-    <div ng-controller="template3Controller">
-      <select id="inputCountry"
-        ng-model="currentCountry"
-        ng-change="expand('countryAnchor',currentCountry)"
-        ng-options="country.name for country in countries track by country.mcc">
-        <!-- TODO: ng-change must invoke directive myCountry -->
-        <!-- NB - country.mcc becomes the option VALUE regardless of which is the chosen label -->
-        <!-- my-country="countryData" inside the tag won't work: link is executed three times during initialisation -->
-      </select>
-      <p>selected country is : {{currentCountry}}</p>
-      <div id="countryAnchor"></div>
-    </div>
-    
     <script type="text/ng-template" id="country.tmpl">
       <div class="country-div">
-        <h3 ng-bind="countryData.name"></h3>
-        <p ng-bind="countryData.mcc"></p>
+        <h3 ng-bind="currentCountry.name"></h3>
+        <p ng-bind="currentCountry.mcc"></p>
         <select id="inputPrice"
           ng-model="currentPrice"
-          ng-change="expand(currentPrice)"
-          ng-options="price.amount for price in prices track by price.amount">
-          <!-- TODO: ng-change must invoke directive myPrice -->
+          ng-options="price.amount for price in currentCountry.prices track by price.amount">
+          <!-- NB - price.amount becomes the option VALUE regardless of which is the chosen label -->
         </select>
         <p>selected price is : {{currentPrice}}</p>
-        <div id="priceAnchor"></div>
+        <price-data amount="{{currentPrice.amount}}"></price-data>
       </div>
     </script>
 
     <script type="text/ng-template" id="price.tmpl">
       <div class="price-div">
         <label ng-bind="price.amount"></label>
-        <p>selected price is : {{currentPrice}}</p>
-        <!-- TODO: put here connectivities' select and repeat behavior as in #inputCountry -->
-        <p>selected connectivity is : {{currentConnectivity}}</p>
-        <div id="connectivityAnchor"></div>
+        <select id="inputConnectivity"
+          ng-model="currentConnectivity"
+          ng-options="connectivity.rid for connectivity in currentPrice.connectivities track by connectivity.rid">
+          <!-- NB - connectivity.rid becomes the option VALUE regardless of which is the chosen label -->
+        </select>
+        <!--p>selected connectivity is : {{currentConnectivity}}</p-->
+        <connectivity-data rid="{{currentConnectivity.rid}}"></connectivity-data>
       <div>
     </script>
+
+    <div ng-controller="template3Controller">
+      <select id="inputCountry"
+        ng-model="currentCountry"
+        ng-options="country.name for country in countries track by country.mcc">
+        <!-- NB - country.mcc becomes the option VALUE regardless of which is the chosen label -->
+     </select>
+      <!--p>selected country is : {{currentCountry}}</p-->
+      <country-data name="{{currentCountry.name}}"></country-data>
+    </div>
 
   </body>
 </html>
