@@ -571,6 +571,9 @@ navigationApp.controller('template3Controller', function($scope){
       link: function(scope,element,attrs){
         scope.$watch(attrs.name,function(value){
           if (!value) return;
+          $scope.currentPrice = '';
+          $scope.currentConnectivity = '';
+          $scope.currentCreditProvider = '';
           repaint();
         });
         function repaint(){
@@ -588,6 +591,8 @@ navigationApp.controller('template3Controller', function($scope){
       link: function(scope,element,attrs){
         scope.$watch(attrs.amount,function(value){
           if (!value) return;
+          $scope.currentConnectivity = '';
+          $scope.currentCreditProvider = '';
           repaint();
         });
         function repaint(){
@@ -605,6 +610,7 @@ navigationApp.controller('template3Controller', function($scope){
       link: function(scope,element,attrs){
         scope.$watch(attrs.rid,function(value){
           if (!value) return;
+          $scope.currentCreditProvider = '';
           repaint();
         });
         function repaint(){
