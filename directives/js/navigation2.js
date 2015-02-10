@@ -560,6 +560,7 @@ navigationApp.controller('template3Controller', function($scope){
     $scope.currentCountry = null; // to be chosen in the first select
     $scope.currentPrice = null; // to be chosen in the second select
     $scope.currentConnectivity = null; // to be chosen in the third select
+    $scope.currentCreditProvider = null; // to be chosen in the fourth select
     $scope.countries = blob.countries;
   })
   .directive('countryData',function($templateCache){
@@ -586,6 +587,40 @@ navigationApp.controller('template3Controller', function($scope){
       transclude: true,
       link: function(scope,element,attrs){
         scope.$watch(attrs.amount,function(value){
+          if (!value) return;
+          repaint();
+        });
+        function repaint(){
+          element.html(template);
+          $compile(element.contents())(scope);
+        }
+      }
+    }
+  })
+  .directive('connectivityData',function($templateCache){
+    return {
+      restrict: 'E',
+      template: $templateCache.get('connectivity.tmpl'),
+      transclude: true,
+      link: function(scope,element,attrs){
+        scope.$watch(attrs.rid,function(value){
+          if (!value) return;
+          repaint();
+        });
+        function repaint(){
+          element.html(template);
+          $compile(element.contents())(scope);
+        }
+      }
+    }
+  })
+  .directive('creditProviderData',function($templateCache){
+    return {
+      restrict: 'E',
+      template: $templateCache.get('creditProvider.tmpl'),
+      transclude: true,
+      link: function(scope,element,attrs){
+        scope.$watch(attrs.rid,function(value){
           if (!value) return;
           repaint();
         });

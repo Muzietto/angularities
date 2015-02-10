@@ -15,32 +15,56 @@
 
     <script type="text/ng-template" id="country.tmpl">
       <div class="country-div">
-        <h3 ng-bind="currentCountry.name"></h3>
-        <p ng-bind="currentCountry.mcc"></p>
+        <h3>Select a price</h3>
         <select id="inputPrice"
           ng-model="currentPrice"
           ng-options="price.amount for price in currentCountry.prices track by price.amount">
-          <!-- NB - price.amount becomes the option VALUE regardless of which is the chosen label -->
         </select>
-        <p>selected price is : {{currentPrice}}</p>
+        <!--p>selected price is : {{currentPrice}}</p-->
         <price-data amount="{{currentPrice.amount}}"></price-data>
       </div>
     </script>
 
     <script type="text/ng-template" id="price.tmpl">
       <div class="price-div">
-        <label ng-bind="price.amount"></label>
+        <h3>Select a connectivity</h3>
         <select id="inputConnectivity"
           ng-model="currentConnectivity"
           ng-options="connectivity.rid for connectivity in currentPrice.connectivities track by connectivity.rid">
-          <!-- NB - connectivity.rid becomes the option VALUE regardless of which is the chosen label -->
         </select>
         <!--p>selected connectivity is : {{currentConnectivity}}</p-->
         <connectivity-data rid="{{currentConnectivity.rid}}"></connectivity-data>
       <div>
     </script>
 
+    <script type="text/ng-template" id="connectivity.tmpl">
+      <div class="connectivity-div">
+        <h3>Select a creditProvider</h3>
+        <select id="inputCreditProvider"
+          ng-model="currentCreditProvider"
+          ng-options="creditProvider.rid for creditProvider in currentConnectivity.credit_providers track by creditProvider.rid">
+        </select>
+        <p>selected creditProvider is : {{currentCreditProvider}}</p>
+        <credit-provider-data rid="{{currentCreditProvider.rid}}"></credit-provider-data>
+      <div>
+    </script>
+
+    <script type="text/ng-template" id="creditProvider.tmpl">
+      <div class="credit-provider-div">
+        <h3>rid={{currentCreditProvider.rid}} - mnc={{currentCreditProvider.mnc}}</h3>
+        <p class="spending-limit">daily_spending_limit={{currentCreditProvider.daily_spending_limit}}</p>
+        <p class="spending-limit">monthly_spending_limit={{currentCreditProvider.monthly_spending_limit}}</p>
+        <ul>
+          <li ng-repeat="route in currentCreditProvider.routes">
+            <label>lane: {{route.lane}}</label><br/>
+            <label>type_of_billing: {{route.type_of_billing}}</label>
+          </li>
+        </ul>
+      <div>
+    </script>
+
     <div ng-controller="template3Controller">
+      <h3>Select a country</h3>
       <select id="inputCountry"
         ng-model="currentCountry"
         ng-options="country.name for country in countries track by country.mcc">
