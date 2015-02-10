@@ -10,11 +10,19 @@
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
     <script type="text/javascript" src="js/navigation2.js"></script>
-    </head>
+    
+    <style>
+      .navigation-div { margin-left: 50px; min-width: 200px; }
+      .country-div { border: 1px solid red; }
+      .price-div { border: 1px solid green; }
+      .connectivity-div { border: 1px solid blue; }
+      .credit-provider-div { border: 1px solid yellow; }
+    </style>
+  </head>
   <body ng-app="navigationSandbox">
 
     <script type="text/ng-template" id="country.tmpl">
-      <div class="country-div">
+      <div class="country-div navigation-div">
         <h3>Select a price</h3>
         <select id="inputPrice"
           ng-model="currentPrice"
@@ -26,7 +34,7 @@
     </script>
 
     <script type="text/ng-template" id="price.tmpl">
-      <div class="price-div">
+      <div class="price-div navigation-div">
         <h3>Select a connectivity</h3>
         <select id="inputConnectivity"
           ng-model="currentConnectivity"
@@ -38,19 +46,19 @@
     </script>
 
     <script type="text/ng-template" id="connectivity.tmpl">
-      <div class="connectivity-div">
+      <div class="connectivity-div navigation-div">
         <h3>Select a creditProvider</h3>
         <select id="inputCreditProvider"
           ng-model="currentCreditProvider"
           ng-options="creditProvider.rid for creditProvider in currentConnectivity.credit_providers track by creditProvider.rid">
         </select>
-        <p>selected creditProvider is : {{currentCreditProvider}}</p>
+        <!--p>selected creditProvider is : {{currentCreditProvider}}</p-->
         <credit-provider-data rid="{{currentCreditProvider.rid}}"></credit-provider-data>
       <div>
     </script>
 
     <script type="text/ng-template" id="creditProvider.tmpl">
-      <div class="credit-provider-div">
+      <div class="credit-provider-div navigation-div">
         <h3>rid={{currentCreditProvider.rid}} - mnc={{currentCreditProvider.mnc}}</h3>
         <p class="spending-limit">daily_spending_limit={{currentCreditProvider.daily_spending_limit}}</p>
         <p class="spending-limit">monthly_spending_limit={{currentCreditProvider.monthly_spending_limit}}</p>
