@@ -16,6 +16,9 @@
   <link href="../flex/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- PAGE LEVEL PLUGIN STYLES -->
+    <link href="../flex/css/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+    <link href="../flex/css/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+    <link href="../flex/css/plugins/bootstrap-multiselect/bootstrap-multiselect.css" rel="stylesheet">
 
   <!-- THEME STYLES - Include these on every page. -->
   <link href="../flex/css/style.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   <!-- THEME DEMO STYLES - Use these styles for reference if needed. Otherwise they can be deleted. -->
   <link href="../flex/css/demo.css" rel="stylesheet">
 
+  <script src="js/lib/jquery.js"></script>
   <script type="text/javascript" src="js/lib/angular.js"></script>
   <script type="text/javascript" src="js/navigation2.js"></script>
 </head>
@@ -123,6 +127,17 @@
                   <div class="portlet-body">
                     <form class="form-horizontal" ng-controller="template3Controller">
                       <div class="form-group">
+                                    <h3>Radio Dropdown</h3>
+                                    <p>
+                                        <select id="multiselect1">
+                                            <option value="cheese" selected>Cheese</option>
+                                            <option value="tomatoes">Tomatoes</option>
+                                            <option value="mozarella">Mozzarella</option>
+                                            <option value="mushrooms">Mushrooms</option>
+                                            <option value="pepperoni">Pepperoni</option>
+                                            <option value="onions">Onions</option>
+                                        </select>
+                                    </p>
                         <h3>Select a country</h3>
                         <div class="col-sm-10">
                           <select class="form-control" 
@@ -190,16 +205,25 @@
   </div>
   <!-- /#page-wrapper -->
   <!-- end MAIN PAGE CONTENT -->
+    <!-- /#logout -->
+    <!-- Logout Notification jQuery -->
+    <script src="../flex/js/plugins/popupoverlay/logout.js"></script>
+    <!-- HISRC Retina Images -->
+    <script src="../flex/js/plugins/hisrc/hisrc.js"></script>
 
   <!-- GLOBAL SCRIPTS -->
   <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
-  <script src="js/lib/jquery.js"></script>
   <script src="../flex/js/plugins/bootstrap/bootstrap.min.js"></script>
   <script src="../flex/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
   <script src="../flex/js/plugins/popupoverlay/jquery.popupoverlay.js"></script>
   <script src="../flex/js/plugins/popupoverlay/defaults.js"></script>
 
-  <!-- THEME SCRIPTS -->
+    <!-- PAGE LEVEL PLUGIN SCRIPTS -->
+    <script src="../flex/js/plugins/ladda/spin.min.js"></script>
+    <script src="../flex/js/plugins/ladda/ladda.min.js"></script>
+    <script src="../flex/js/plugins/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+
+    <!-- THEME SCRIPTS -->
   <script src="../flex/js/flex.js"></script>
 
 </body>

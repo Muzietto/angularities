@@ -6,5 +6,6 @@ TODO LIST
 - enable/disable selects
 - use live data from server
 - use anchors instead of selects and options
+- use flex "radio Dropdown" as in flex/buttons.html
 - perform ajax call halfway in the navigation
 
