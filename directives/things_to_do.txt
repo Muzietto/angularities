@@ -1,5 +1,6 @@
 TODO LIST
 ---------
+- integrate navigation-with-flex.html into panel
 - show/hide markup
 - reset selects
 - enable/disable selects
