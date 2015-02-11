@@ -1,0 +1,9 @@
+TODO LIST
+---------
+- show/hide markup
+- reset selects
+- enable/disable selects
+- use live data from server
+- use anchors instead of selects and options
+- perform ajax call halfway in the navigation
+
