@@ -35,10 +35,11 @@
 <body ng-app="navigationSandbox">
 
   <script type="text/ng-template" id="country.tmpl">
-    <div class="country-div navigation-div">
+    <div ng-hide="!currentCountry" class="country-div navigation-div">
       <h3>Select a price</h3>
       <select id="inputPrice" class="form-control"
         ng-model="currentPrice"
+        ng-change="currentConnectivity=null;currentCreditProvider=null;"
         ng-options="price.amount for price in currentCountry.prices track by price.amount">
       </select>
       <!--p>selected price is : {{currentPrice}}</p-->
@@ -47,10 +48,11 @@
   </script>
 
   <script type="text/ng-template" id="price.tmpl">
-    <div class="price-div navigation-div">
+    <div ng-hide="!currentPrice" class="price-div navigation-div">
       <h3>Select a connectivity</h3>
       <select id="inputConnectivity" class="form-control"
         ng-model="currentConnectivity"
+        ng-change="currentCreditProvider=null;"
         ng-options="connectivity.rid for connectivity in currentPrice.connectivities track by connectivity.rid">
       </select>
       <!--p>selected connectivity is : {{currentConnectivity}}</p-->
@@ -59,7 +61,7 @@
   </script>
 
   <script type="text/ng-template" id="connectivity.tmpl">
-    <div class="connectivity-div navigation-div">
+    <div ng-hide="!currentConnectivity" class="connectivity-div navigation-div">
       <h3>Select a creditProvider</h3>
       <select id="inputCreditProvider" class="form-control"
         ng-model="currentCreditProvider"
@@ -71,7 +73,7 @@
   </script>
 
   <script type="text/ng-template" id="creditProvider.tmpl">
-    <div class="credit-provider-div navigation-div">
+    <div ng-hide="!currentCreditProvider" class="credit-provider-div navigation-div">
       <h3>rid={{currentCreditProvider.rid}} - mnc={{currentCreditProvider.mnc}}</h3>
       <p class="spending-limit">daily_spending_limit={{currentCreditProvider.daily_spending_limit}}</p>
       <p class="spending-limit">monthly_spending_limit={{currentCreditProvider.monthly_spending_limit}}</p>
@@ -127,22 +129,12 @@
                   <div class="portlet-body">
                     <form class="form-horizontal" ng-controller="template3Controller">
                       <div class="form-group">
-                                    <h3>Radio Dropdown</h3>
-                                    <p>
-                                        <select id="multiselect1">
-                                            <option value="cheese" selected>Cheese</option>
-                                            <option value="tomatoes">Tomatoes</option>
-                                            <option value="mozarella">Mozzarella</option>
-                                            <option value="mushrooms">Mushrooms</option>
-                                            <option value="pepperoni">Pepperoni</option>
-                                            <option value="onions">Onions</option>
-                                        </select>
-                                    </p>
                         <h3>Select a country</h3>
                         <div class="col-sm-10">
                           <select class="form-control" 
                             id="inputCountry"
                             ng-model="currentCountry"
+                            ng-change="currentPrice=null;currentConnectivity=null;currentCreditProvider=null;"
                             ng-options="country.name for country in countries track by country.mcc">
                           </select>
                         </div>

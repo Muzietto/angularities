@@ -1,11 +1,10 @@
 TODO LIST
 ---------
-- integrate navigation-with-flex.html into panel
-- show/hide markup
-- reset selects
++- integrate navigation-with-flex.html into panel
++- show/hide markup
++- reset selects
 - enable/disable selects
-- use live data from server
++- use live data from server (www.dev.onebip.com/bko/configuration)
 - use anchors instead of selects and options
 - use flex "radio Dropdown" as in flex/buttons.html
-- perform ajax call halfway in the navigation
-
++- perform ajax call halfway in the navigation
