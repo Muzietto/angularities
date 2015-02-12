@@ -35,6 +35,7 @@ navigationApp.controller('template3Controller', function($scope){
 var blob = {
     "countries": [
         {
+            "accordionCode": "One", 
             "mcc": "269", 
             "name": "Rangiroa", 
             "prices": [
@@ -215,6 +216,7 @@ var blob = {
         },
         {
             "mcc": "268", 
+            "accordionCode": "Two", 
             "name": "Portugal", 
             "prices": [
                 {
