@@ -40,7 +40,7 @@ angular.module('myModule',['ui.bootstrap']).controller('AccordionDemoCtrl', func
 </script>
 
 </head>
-<body>
+<body ng-app="myModule">
 <div ng-controller="AccordionDemoCtrl">
   <p>
     <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
