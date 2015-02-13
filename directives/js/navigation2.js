@@ -21,6 +21,12 @@ var directiveFrom = function(templateName,varName){
 }
 
 navigationApp.controller('template3Controller', function($scope){
+    $scope.oneAtATime = true;
+    $scope.status = {
+      isFirstOpen: true,
+      isFirstDisabled: false
+    };
+
     $scope.currentCountry = null;
     $scope.currentPrice = null;
     $scope.currentConnectivity = null;
