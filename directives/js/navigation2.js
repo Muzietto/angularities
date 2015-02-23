@@ -1,4 +1,4 @@
-var navigationApp = angular.module('navigationSandbox', []);
+var navigationApp = angular.module('navigationSandbox', ['ui.bootstrap']);
 
 var directiveFrom = function(templateName,varName){
   return function($templateCache){
