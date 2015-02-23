@@ -33,11 +33,12 @@ navigationApp.controller('template3Controller', function($scope){
     $scope.currentCreditProvider = null;
     $scope.countries = blob.countries;
   })
+  /*
   .directive('countryData',directiveFrom('country.tmpl','name'))
   .directive('priceData',directiveFrom('price.tmpl','amount'))
   .directive('connectivityData',directiveFrom('connectivity.tmpl','rid'))
   .directive('creditProviderData',directiveFrom('creditProvider.tmpl','rid'))
-
+*/
 var blob = {
     "countries": [
         {

@@ -122,14 +122,27 @@
                     <h4>Basic Form Controls</h4>
                   </div>
                   <div class="portlet-widgets">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#formControls"><i class="fa fa-chevron-down"></i></a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#formControls">
+                      <i class="fa fa-chevron-down"></i>
+                    </a>
                   </div>
                   <div class="clearfix"></div>
                 </div>
                 <div id="formControls" class="panel-collapse collapse in">
                   <div class="portlet-body" ng-controller="template3Controller">
+                    <h3>Select a country - static accordion</h3>
+                    <accordion close-others="oneAtATime">
+                      <accordion-group heading="Armenia">
+                        <p>123</p>
+                        <pre>prices_01</pre>
+                      </accordion-group>
+                      <accordion-group heading="Latvia">
+                        <p>345</p>
+                        <pre>latvian prices</pre>
+                      </accordion-group>
+                    </accordion>
 
-                    <h3>Select a country</h3>
+                    <h3>Select a country - dynamic accordion</h3>
                     <accordion close-others="oneAtATime">
                       <accordion-group heading="{{country.name}}" ng-repeat="country in countries track by country.mcc">
                         <p>{{country.mcc}}</p>
