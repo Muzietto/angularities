@@ -30,13 +30,13 @@
       <script>
           var module       = angular.module("myApp", []);
           var myController1 = module.controller("myController", function($scope) {
-       
+
               $scope.data = { time : new Date() };
 
               $scope.updateTime = function() {
                   $scope.data.time = new Date();
               }
-              
+
               $scope.$watch(function(scope) { return scope.data.time },
               function(newValue, oldValue) {
                   document.getElementById("secondLabel").innerHTML =
