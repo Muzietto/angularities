@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- http://tutorials.jenkov.com/angularjs/watch-digest-apply.html -->
+    <title>watch-digest-apply</title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
+  </head>
+  <body ng-app="myApp">
+
+      <div ng-controller="myController">
+          <label id="firstLabel">{{data.time}}</label>
+          <br/>
+          <label id="secondLabel"></label>
+          <br/>
+          <button ng-click="updateTime()">update time - ng-click</button>
+          <button id="updateTimeButton1">update time - no digest - no update</button>
+          <button id="updateTimeButton2">update time - with digest</button>
+          <button id="updateTimeButton3">update time - with apply</button>
+
+      </div>
+
+
+      <script>
+          var module       = angular.module("myApp", []);
+          var myController1 = module.controller("myController", function($scope) {
+       
+              $scope.data = { time : new Date() };
+
+              $scope.updateTime = function() {
+                  $scope.data.time = new Date();
+              }
+              
+              $scope.$watch(function(scope) { return scope.data.time },
+              function(newValue, oldValue) {
+                  document.getElementById("secondLabel").innerHTML =
+                      "EXPLICIT $WATCH - time was: " + oldValue + 
+                      ";<br/>EXPLICIT $WATCH - time now: " + newValue;
+              }
+             );
+
+              document.getElementById("updateTimeButton1")
+                      .addEventListener('click', function() {
+                  console.log("update time clicked");
+                  $scope.data.time = new Date();
+              });
+              document.getElementById("updateTimeButton2")
+                      .addEventListener('click', function() {
+                  console.log("update time clicked");
+                  $scope.data.time = new Date();
+                  $scope.$digest();
+              });
+              document.getElementById("updateTimeButton3")
+                      .addEventListener('click', function() {
+                  $scope.$apply(function() {
+                      console.log("update time clicked");
+                      $scope.data.time = new Date();
+                  });
+});          });
+      </script>
+    </body>
+</html>
