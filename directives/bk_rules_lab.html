@@ -45,16 +45,16 @@
 
     <div class="horizon" ng-controller="bkLabController">
       <div id="directivesDiv">
-        <div ng-repeat="(key, value) in rule.constraints">
+        <div class="constraint-div" ng-repeat="(key, value) in rule.constraints">
           <constraint-country ng-if="key === 'country'" rule="rule" api="bk/constraints" default-value="any"></constraint-country>
           <constraint-payment-volume ng-if="key === 'payment_volume'" rule="rule" api="bk/constraints" default-value="{}"></constraint-payment-volume>
           <constraint-amount ng-if="key === 'amount'" rule="rule" api="bk/constraints" default-type="puntual" default-value="any"></constraint-amount>
+          <label>KEY: </label><pre style="display:inline;">{{ key }}</pre><br/>
+          <label>VALUE: </label><pre style="display:inline;">{{ value | json }}</pre>
         </div>
       </div>
       <div id="modelDiv">
-        <label>KEY: </label><pre>{{ key }}</pre>
-        <label>VALUE: </label><pre>{{ value }}</pre>
-        <label>RULE: </label><pre>{{ rule }}</pre>
+        <label>RULE: </label><pre class="ordered-pre">{{ rule | json }}</pre>
       </div>
     </div>
 

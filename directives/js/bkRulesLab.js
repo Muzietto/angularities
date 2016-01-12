@@ -2,8 +2,6 @@
 angular.module('bkRulesLab', [])
 .controller('bkLabController', function($scope) {
   $scope.rule = theRule();
-  $scope.key = 'payment_volume';
-  $scope.value = 'GET IT FROM THE DIRECTIVES';
 })
 .directive('constraintPaymentVolume', function (/*Range*/) {
   return {
