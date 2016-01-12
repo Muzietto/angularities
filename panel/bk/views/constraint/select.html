@@ -1,0 +1,13 @@
+<div data-ng-class="{'any_warning': simulator===true && (rule.constraints[name]==='any' || rule.constraints[name]===['any'])}">
+    <select 
+        data-ng-if="!input" 
+        ui-select2 
+        data-ng-model="rule.constraints[name]" 
+        class="constraint-cell" 
+        data-ng-disabled="itemLoading || disabled">
+        <option value="any" ng-if="anyValueOnSelect">any</option>
+        <option data-ng-repeat="value in items" value="{{value.rid || value.service_id}}">{{ value.name || value.rid }}</option>
+    </select>
+    <input data-ng-model="rule.constraints[name]" data-ng-if="input" />
+    <side-loader class="outloader text-info" spin-on="itemLoading" />
+</div>

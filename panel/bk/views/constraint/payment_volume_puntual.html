@@ -1,0 +1,8 @@
+<div data-ng-class="{'any_warning': simulator===true && !rule.constraints.payment_volume}">
+    <div class="input-group form-inline constraint-cell">
+        <input data-bk-tooltip="Format example: 5000"
+               data-placement="right"
+               data-bk-tooltip-options="{container:'body'}"
+               data-ng-model="rule.constraints.payment_volume" type="text" class="form-control">
+    </div>
+</div>

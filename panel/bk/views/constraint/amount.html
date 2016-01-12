@@ -1,0 +1,64 @@
+<div data-ng-class="{'any_warning': simulator===true && rule.constraints.amount==='any'}">
+    <div style="margin-bottom:8px" id="chooses" data-ng-if="!simulator">
+        <input type="radio" data-ng-model="type" value="punctual" data-ng-click="rule.constraints.amount = 'any'" /> Punctual
+        <input type="radio" data-ng-model="type" value="range" data-ng-click="rule.constraints.amount = {}" /> Range
+    </div>
+
+
+    <div data-ng-if="type == 'punctual'">
+        <style>
+            .selectize-input .item {
+              font-size: 14px;
+            }
+            .selectize-input.items {
+              height: 62px !important;
+              padding-top: 4px !important;
+              background-image: moz-linear-gradient(top, #ffffff, #ffffff, #eeeeee) !important;
+              background-image: webkit-linear-gradient(top, #ffffff, #ffffff, #eeeeee) !important;
+              background-image: -o-linear-gradient(top, #ffffff, #ffffff, #eeeeee) !important;
+              background-image: linear-gradient(to bottom, #ffffff, #ffffff, #eeeeee) !important;
+            }
+            .selectize-input:after {
+              right: 4px !important;
+            }
+        </style>
+        <!--
+        <select ui-select2="config" data-ng-model="rule.constraints.amount" style="width: 200px" data-ng-disabled="disabled">
+            <option data-ng-repeat="value in items" value="{{value.rid}}">{{ value.rid }}</option>
+        </select>
+        -->
+        <selectize config='selectConfig' options='options' ng-model="rule.constraints.amount" ng-disabled="itemLoading || disabled" style="width: 200px"></selectize>
+        <side-loader class="outloader text-info" spin-on="itemLoading" />
+    </div>
+
+
+    <div data-ng-if="type == 'range'">
+        <div class="input-group form-inline constraint-cell">
+            <span class="input-group-addon">
+                <select data-ng-model="rule.constraints.amount.from.operator" data-ng-disabled="disabled">
+                    <option value="gt-amount">&gt;</option>
+                    <option value="gte-amount">≥</option>
+                </select>
+            </span>
+
+            <input data-bk-tooltip="Format example: 1.9900/EUR"
+                   data-placement="right"
+                   data-bk-tooltip-options="{container:'body'}"
+                   data-ng-model="rule.constraints.amount.from.value" type="text" class="form-control" data-ng-disabled="disabled">
+        </div>
+
+        <div class="input-group form-inline constraint-cell">
+            <span class="input-group-addon">
+                <select data-ng-model="rule.constraints.amount.to.operator" data-ng-disabled="disabled">
+                    <option value="lt-amount">&lt;</option>
+                    <option value="lte-amount">≤</option>
+                </select>
+            </span>
+
+            <input data-bk-tooltip="Format example: 1.9900/EUR"
+                   data-placement="right"
+                   data-bk-tooltip-options="{container:'body'}"
+                   data-ng-model="rule.constraints.amount.to.value" type="text" class="form-control" data-ng-disabled="disabled">
+        </div>
+    </div>
+</div>
