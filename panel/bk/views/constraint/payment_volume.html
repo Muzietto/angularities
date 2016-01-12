@@ -1,7 +1,8 @@
-<div>
+<div class="constraint-div">
     <div class="input-group form-inline constraint-cell">
         <span class="input-group-addon">
             <select data-ng-model="rule.constraints.payment_volume.from.operator">
+                <option value=""></option>
                 <option value="gt">></option>
                 <option value="gte">≥</option>
             </select>
@@ -16,6 +17,7 @@
     <div class="input-group form-inline constraint-cell">
         <span class="input-group-addon">
             <select data-ng-model="rule.constraints.payment_volume.to.operator">
+                <option value=""></option>
                 <option value="lt"><</option>
                 <option value="lte">≤</option>
             </select>

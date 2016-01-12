@@ -30,6 +30,12 @@
         border: 2px solid blue;
         background-color: whitesmoke;
       }
+      .constraint-div {
+        width: 90%;
+        margin: 10px auto;
+        padding: 5px;
+        border: 1px solid green;
+      }
     </style>
     
     <script type="text/javascript" src="js/lib/angular.js"></script>
@@ -39,14 +45,16 @@
 
     <div class="horizon" ng-controller="bkLabController">
       <div id="directivesDiv">
-        <constraint-country ng-if="key === 'country'" rule="rule" api="bk/constraints" default-value="any"/>
-        <constraint-payment-volume ng-if="key === 'payment_volume'" rule="rule" api="bk/constraints" default-value="{}"/>
-        <constraint-amount ng-if="key === 'amount'" rule="rule" api="bk/constraints" default-type="puntual" default-value="any"/>
+        <div ng-repeat="(key, value) in rule.constraints">
+          <constraint-country ng-if="key === 'country'" rule="rule" api="bk/constraints" default-value="any"></constraint-country>
+          <constraint-payment-volume ng-if="key === 'payment_volume'" rule="rule" api="bk/constraints" default-value="{}"></constraint-payment-volume>
+          <constraint-amount ng-if="key === 'amount'" rule="rule" api="bk/constraints" default-type="puntual" default-value="any"></constraint-amount>
+        </div>
       </div>
       <div id="modelDiv">
-        <label>RULE: </label><pre>{{ rule }}</pre>
         <label>KEY: </label><pre>{{ key }}</pre>
         <label>VALUE: </label><pre>{{ value }}</pre>
+        <label>RULE: </label><pre>{{ rule }}</pre>
       </div>
     </div>
 
