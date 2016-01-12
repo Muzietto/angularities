@@ -382,7 +382,7 @@ angular.module('onebip.panel.bk.directives', [])
         $scope.rule.constraints.payment_volume = Range.fromString($scope.rule.constraints.payment_volume);
       }
     },
-    templateUrl: '/lib/bk/views/constraint/range.html'
+    templateUrl: '/lib/bk/views/constraint/payment_volume.html'
   }
 })
 .directive('constraintPaymentVolumePuntual', function (Range) {
