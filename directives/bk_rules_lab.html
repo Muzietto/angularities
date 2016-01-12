@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BK RULES LAB</title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <style>
+      .horizon {
+        width: 70%;
+        min-height:400px;
+        margin: 0 auto;
+        background-color: pink;
+      }
+      #directivesDiv {
+        width: 90%;
+        margin: 10px auto;
+        min-height: 180px;
+        border: 2px solid red;
+        background-color: white;
+      }
+      #modelDiv {
+        width: 90%;
+        margin: 10px auto;
+        min-height: 60px;
+        border: 2px solid blue;
+        background-color: whitesmoke;
+      }
+    </style>
+    
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/bkRulesLab.js"></script>
+  </head>
+  <body ng-app="bkRulesLab">
+
+    <div class="horizon" ng-controller="bkLabController">
+      <div id="directivesDiv">
+        <constraint-country ng-if="key === 'country'" rule="rule" api="bk/constraints" default-value="any"/>
+        <constraint-payment-volume ng-if="key === 'payment_volume'" rule="rule" api="bk/constraints" default-value="{}"/>
+        <constraint-amount ng-if="key === 'amount'" rule="rule" api="bk/constraints" default-type="puntual" default-value="any"/>
+      </div>
+      <div id="modelDiv">
+        <label>RULE: </label><pre>{{ rule }}</pre>
+        <label>KEY: </label><pre>{{ key }}</pre>
+        <label>VALUE: </label><pre>{{ value }}</pre>
+      </div>
+    </div>
+
+  </body>
+</html>
