@@ -1,0 +1,114 @@
+<div ng-controller="cartCtrl">
+    <div class="alert alert-success alert-dismissable ng-hide" data-ng-show="cart.messages.length">
+        <button type="button" class="close" data-ng-click="resetMessages()">&times;</button>
+        <ul>
+            <li data-ng-repeat="message in cart.messages track by $index">{{ message }}</li>
+        </ul>
+    </div>
+
+    <div class="alert alert-danger alert-dismissable ng-hide" data-ng-show="cart.failureMessages.length">
+        <button type="button" class="close" data-ng-click="resetFailureMessages()">&times;</button>
+        <ul>
+            <li data-ng-repeat="message in cart.failureMessages track by $index">{{ message }}</li>
+        </ul>
+    </div>
+
+    <div class="portlet portlet-default" data-ng-if="cart.rulesLength">
+        <div class="portlet-heading">
+            <div class="portlet-title">
+                <h4>Rules to change</h4>
+            </div>
+            <div class="portlet-widgets">
+                <a data-toggle="collapse" class="preventDefault" data-parent="#accordion" href="#rulesCart"><i class="fa fa-chevron-down"></i></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div id="rulesCart" class="panel-collapse in">
+            <div class="portlet-body">
+                <div class="table-responsive">
+
+                    <table class="table" id="rules-table">
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>Constraints</th>
+                                <th>Enabled</th>
+                                <th>Value</th>
+                                <th>Priority</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="rule in cart.rules" data-ng-class="{'danger strike': rule.toDelete}">
+                                <td>{{ rule.key }}</td>
+                                <td class="col-md-4 col-lg-4">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="form-group" data-ng-repeat="key in rule.constraintsKeys">
+                                            <label class="col-lg-3">{{ key | constraintKeyToString }}:</label>
+                                            <div class="col-lg-7">
+                                                <constraint-input name="{{key}}" rule="rule" any-value-on-select api="bk/constraints" default-value="any" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </td>
+                                <td class="col-lg-1 col-md-1">
+                                    <p data-ng-if="rule.toDelete" class="form-control-static">{{ rule.enabled }}</p>
+                                    <input data-ng-if="!rule.toDelete" class="form-control" type="checkbox" data-ng-model="rule.enabled" />
+                                </td>
+                                <td  class="col-lg-2 col-md-2">
+                                    <div>
+                                        <p data-ng-if="rule.toDelete" class="form-control-static">{{ rule.value }}</p>
+                                        <rule-value data-ng-if="!rule.toDelete"></rule-value>
+                                    </div>
+                                </td>
+                                <td  class="col-lg-1 col-md-1">
+                                    <p data-ng-if="rule.toDelete" class="form-control-static">{{ rule.priority }}</p>
+
+                                    <input data-ng-if="!rule.toDelete"
+                                           data-bk-tooltip="Integer value. Format example: 20"
+                                           data-ng-model="rule.priority"
+                                           class="form-control"
+                                           type="text" />
+
+                                    <div style="margin: 5px 0;" data-ng-if="!rule.toDelete">
+                                        <bk-slider ng-model="rule.priority"
+                                                   type="text" id="priority-slider"
+                                                   options="prioptions">
+                                        </bk-slider>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div data-ng-if="!rule.toDelete" class="btn-group open">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li data-bk-tooltip="Copy constraints into Clipboard"
+                                                data-bk-tooltip-options="{container:'body'}"
+                                                data-placement="left"
+                                                data-clipboard-constraint-copy="rule">
+                                                <a href="#"><i class="fa fa-save"></i> Copy constraints</a>
+                                            </li>
+                                            <li data-bk-tooltip="Paste constraints from Clipboard"
+                                                data-bk-tooltip-options="{container:'body'}"
+                                                data-placement="left"
+                                                data-clipboard-constraint-paste="rule">
+                                                <a href="#"><i class="fa fa-clipboard"></i> Paste constraints</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button data-bk-tooltip="Remove the Rule from the Cart" class="btn btn-danger" data-ng-click="removeRule(rule)"><i class="fa fa-minus"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="portlet-footer clearfix">
+                <button class="btn btn-success pull-right" data-ng-click="saveAll()"><i class="fa fa-save"></i> Save</button>
+            </div>
+        </div>
+    </div>
+</div>
