@@ -2,6 +2,36 @@
 angular.module('bkRulesLab', [])
 .controller('bkLabController', function($scope) {
   $scope.rule = theRule();
+  $scope.payment_volume = [{'gt':123},{'lt':500}];
+})
+.directive('selectInput', function (/*Range*/) {
+  return {
+    restrict: 'E',
+    require: 'ngModel',
+    scope: {
+      //setModel : '&',
+      //the_model : '=',
+      options : '='//,
+      //operator : '=',
+      //operand  : '='
+    },
+    controller: function ($scope) {
+      $scope.getKey = function(obj) {
+        try {
+          return Object.keys(obj)[0];
+        } catch (e) {}
+      };
+      $scope.getValue = function(obj) {
+        try {
+          return obj[Object.keys(obj)[0]];
+        } catch (e) {}
+      };
+      $scope.the_model = 'qweqwe';
+      $scope.operator = undefined;
+      $scope.operand = undefined;
+   },
+    templateUrl: '../panel/bk/views/constraint/select_input.html'
+  }
 })
 .directive('constraintPaymentVolume', function (/*Range*/) {
   return {
@@ -13,23 +43,6 @@ angular.module('bkRulesLab', [])
 //      }
     },
     templateUrl: '../panel/bk/views/constraint/payment_volume.html'
-  }
-})
-.directive('selectInput', function (/*Range*/) {
-  return {
-    restrict: 'E',
-    scope: {
-      _model : '=',
-      options : '=',
-      operator : '=',
-      operand  : '='
-    },
-    controller: function ($scope) {
- //     if (angular.isString($scope.rule.constraints.payment_volume)) {
- //       $scope.rule.constraints.payment_volume = Range.fromString($scope.rule.constraints.payment_volume);
-//      }
-    },
-    templateUrl: '../panel/bk/views/constraint/select_input.html'
   }
 })
 .directive('constraintCountry', function ($http) {
@@ -79,7 +92,7 @@ function theRule() {
       "country": "any",
       "credit_provider": "any",
       "merchant": "any",
-      "payment_volume": [],
+      "payment_volume": [{'gt':123},{'lt':500}],
 //        "from": {
 //          "operator": "",
 //          "value": ""

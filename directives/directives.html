@@ -16,10 +16,12 @@
   <body ng-app="directiveSandbox">
   
     <div ng-controller="bkLabController">
-        <select-input _model="rule.constraints.payment_volume[0]" options="[{'':''},{'gt':'>'},{'gte':'≥'}]"></select-input>
+        <select-input
+         the_model="payment_volume[0]"
+         options="[{'gt':'>'},{'gte':'≥'}]"></select-input>
         <pre>{{ _model }}</pre>
         <br/>
-        <pre>{{ rule.constraints.payment_volume }}</pre>
+        <pre>{{ payment_volume }}</pre>
     </div>
     <hr/>
     <div ng-controller="docsTemplateUrlDirectiveController">
