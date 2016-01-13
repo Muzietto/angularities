@@ -8,11 +8,26 @@ angular.module('bkRulesLab', [])
     restrict: 'E',
     scope: { key : '=' },
     controller: function ($scope) {
-      if (angular.isString($scope.rule.constraints.payment_volume)) {
-        $scope.rule.constraints.payment_volume = Range.fromString($scope.rule.constraints.payment_volume);
-      }
+ //     if (angular.isString($scope.rule.constraints.payment_volume)) {
+ //       $scope.rule.constraints.payment_volume = Range.fromString($scope.rule.constraints.payment_volume);
+//      }
     },
     templateUrl: '../panel/bk/views/constraint/payment_volume.html'
+  }
+})
+.directive('selectInput', function (/*Range*/) {
+  return {
+    restrict: 'E',
+    scope: {
+      operator : '=',
+      operand  : '='
+    },
+    controller: function ($scope) {
+ //     if (angular.isString($scope.rule.constraints.payment_volume)) {
+ //       $scope.rule.constraints.payment_volume = Range.fromString($scope.rule.constraints.payment_volume);
+//      }
+    },
+    templateUrl: '../panel/bk/views/constraint/select_input.html'
   }
 })
 .directive('constraintCountry', function ($http) {
@@ -62,16 +77,16 @@ function theRule() {
       "country": "any",
       "credit_provider": "any",
       "merchant": "any",
-      "payment_volume": {
-        "from": {
-          "operator": "",
-          "value": ""
-        },
-        "to": {
-          "operator": "",
-          "value": ""
-        }
-      },
+      "payment_volume": [],
+//        "from": {
+//          "operator": "",
+//          "value": ""
+//        },
+//        "to": {
+//          "operator": "",
+//          "value": ""
+//        }
+//      ],
       "amount": "any",
       "container_amount": "any",
       "connectivity": "any",

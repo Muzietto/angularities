@@ -1,0 +1,14 @@
+<div class="constraint-div" data-ng-model="$$parent._model">
+  <div class="input-group form-inline constraint-cell">
+    <span class="input-group-addon">
+      <select data-ng-model="operator">
+        <option ng-repeat="(model_value,symbol) in options" value="model_value">{{symbol}}</option>
+    </select>
+</span>
+
+<input data-bk-tooltip="Format example: 5000"
+       data-placement="right"
+       data-bk-tooltip-options="{container:'body'}"
+       data-ng-model="operand" type="text" class="form-control">
+  </div>
+</div>
