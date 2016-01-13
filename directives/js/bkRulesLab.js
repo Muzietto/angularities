@@ -19,6 +19,8 @@ angular.module('bkRulesLab', [])
   return {
     restrict: 'E',
     scope: {
+      _model : '=',
+      options : '=',
       operator : '=',
       operand  : '='
     },

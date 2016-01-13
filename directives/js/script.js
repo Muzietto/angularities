@@ -1,5 +1,7 @@
 
-var directivesApp = angular.module('directiveSandbox', []);
+var directivesApp = angular.module('directiveSandbox', ['bkRulesLab']);
+
+
 
 directivesApp.controller('docsTemplateUrlDirectiveController', function($scope){
     $scope.customer = {
