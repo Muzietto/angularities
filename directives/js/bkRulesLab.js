@@ -7,13 +7,26 @@ angular.module('bkRulesLab', [])
 .directive('selectInput', function (/*Range*/) {
   return {
     restrict: 'E',
-    require: 'ngModel',
+    //require: 'ngModel',
     scope: {
       //setModel : '&',
       //the_model : '=',
-      options : '='//,
+      options : '=',
+      selection: '@',
       //operator : '=',
-      //operand  : '='
+      operand  : '@'
+    },
+    link: function(scope, element, attrs) {
+      scope.$watchGroup(['selection', 'operand'], function(newValues, oldValues) {
+        if (undef(newValues[0]) || undef(newValues[1])) return;
+        if (newValues[1] === '') {
+          delete scope.result;
+          return;
+        }
+        scope.result = {};
+        scope.result[scope.getKey(newValues[0])] = newValues[1];
+        function undef(thing) { return typeof thing === 'undefined'; }
+      });
     },
     controller: function ($scope) {
       $scope.getKey = function(obj) {
@@ -26,9 +39,7 @@ angular.module('bkRulesLab', [])
           return obj[Object.keys(obj)[0]];
         } catch (e) {}
       };
-      $scope.the_model = 'qweqwe';
-      $scope.operator = undefined;
-      $scope.operand = undefined;
+      //$scope.the_model = 'qweqwe';
    },
     templateUrl: '../panel/bk/views/constraint/select_input.html'
   }
