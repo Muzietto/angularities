@@ -49,15 +49,15 @@ directivesApp.controller('docsIsolateScopeDirectiveController', function($scope)
 directivesApp.controller('docsTimeDirectiveController', function($scope){
     $scope.myDateFormat = 'MM/dd/yy hh:mm:ss Z';
   })
-  // we will use the $interval service to call a handler on a regular basis
+  // we will use the $interval native angular service to call a handler on a regular basis
   // dateFilter is a custom Angular functions (blaaahhh.....)
-  .directive('myCurrentTime', function($interval, dateFilter){
+  .directive('currentTime', function($interval, dateFilter){
     /* directives that want to modify the DOM typically use the link option. 
        link takes a function with the following signature:
        function link($scope, element, attrs) { ... }
        - element is the jqLite-wrapped element that 
-       this directive 'myCurrentTime' matches
-       - attrs = {myCurrentTime:'myDateFormat'}
+       this directive 'currentTime' matches
+       - attrs = {currentTimeDateFormat:'myDateFormat'}
     */
     function linker(scope, element, attrs){
       var _format, timeoutId
@@ -67,7 +67,7 @@ directivesApp.controller('docsTimeDirectiveController', function($scope){
         element.text(dateFilter(new Date, _format));
       }
 
-      scope.$watch(attrs.myCurrentTime, function(value){
+      scope.$watch(attrs.currentTimeDateFormat, function(value){
         _format = value;
         updateTime();
       });
@@ -83,6 +83,7 @@ directivesApp.controller('docsTimeDirectiveController', function($scope){
     }
 
     return {
+      restrict: 'E',
       link: linker
     }
   });
