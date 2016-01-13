@@ -13,11 +13,12 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/bkRulesLab.js"></script>
     </head>
+    <p>try  http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/</p>
   <body ng-app="directiveSandbox">
   
     <div ng-controller="bkLabController">
         <select-input
-         the_model="payment_volume[0]"
+         ng-model="payment_volume[0]"
          options="[{'gt':'>'},{'gte':'≥'}]"></select-input>
         <pre>{{ _model }}</pre>
         <br/>
