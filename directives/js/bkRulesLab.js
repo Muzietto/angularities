@@ -14,6 +14,19 @@ angular.module('bkRulesLab', [])
     },
     templateUrl: '../panel/bk/views/constraint/payment_volume.html'
   }
+})
+.directive('constraintCountry', function ($http) {
+  return {
+    restrict: 'E',
+    replace: true,
+    controller: function ($scope, $attrs) {
+    },
+    templateUrl: '../panel/bk/views/constraint/select.html',
+    link: function(scope, elem, attrs) {
+      // need an operator that reads 'any' in the model
+      // and puts it as the selected option
+    }
+  }
 });
 
 function theRule() {
