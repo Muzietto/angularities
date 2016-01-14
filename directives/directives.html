@@ -22,8 +22,12 @@
         <select-input
          ng-model="payment_volume[0]"
          options="[{'gt':'>'},{'gte':'≥'}]"></select-input>
-        <br/>
         <pre>ngModel={{ payment_volume[0] }}</pre>
+        <hr/>
+        <select-input
+         ng-model="payment_volume[1]"
+         options="[{'lt':'<'},{'lte':'≤'}]"></select-input>
+        <pre>ngModel={{ payment_volume[1] }}</pre>
         <hr/>
         <pre>{{ payment_volume }}</pre>
     </div>
