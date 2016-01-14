@@ -60,16 +60,16 @@ angular.module('bkRulesLab', [])
       });
     },
     controller: function ($scope) {
-        $scope.getKey = function(obj) {
-          try {
-            return Object.keys(obj)[0];
-          } catch (e) {}
-        };
-        $scope.getValue = function(obj) {
-          try {
-            return obj[Object.keys(obj)[0]];
-          } catch (e) {}
-        };
+      $scope.getKey = function(obj) {
+        try {
+          return Object.keys(obj)[0];
+        } catch (e) {}
+      };
+      $scope.getValue = function(obj) {
+        try {
+          return obj[Object.keys(obj)[0]];
+        } catch (e) {}
+      };
      }
   };
 })
