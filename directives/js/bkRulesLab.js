@@ -41,7 +41,6 @@ angular.module('bkRulesLab', [])
         } catch (exc) {} finally {
           return result; // return value becomes modelValue
         }
-        function undef(thing) { return typeof thing === 'undefined'; }
       });
 
       // viewValue -> isolated scope
@@ -57,6 +56,7 @@ angular.module('bkRulesLab', [])
           operand: scope.operand
         });
       });
+      function undef(thing) { return typeof thing === 'undefined'; }
     },
     controller: function ($scope) {
       $scope.getKey = function(obj) {
