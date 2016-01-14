@@ -7,38 +7,70 @@ angular.module('bkRulesLab', [])
 .directive('selectInput', function (/*Range*/) {
   return {
     restrict: 'E',
-    scope: {
-      the_model : '=',
-      options : '=',
-      selection: '@',
-      operand  : '@'
-    },
-    link: function(scope, element, attrs) {
-      scope.$watchGroup(['selection', 'operand'], function(newValues, oldValues) {
-        if (undef(newValues[0]) || undef(newValues[1])) return;
-        if (newValues[1] === '') {
-          delete scope.result;
-          return;
+    scope: { /* options?, whatever? */},
+    require: 'ngModel',
+    templateUrl: '../panel/bk/views/constraint/select_input.html',
+    link: function(scope, element, attrs, ngModelCtrl) {
+
+      // modelValue -> viewValue
+      ngModelCtrl.$formatters.push(function(modelValue) { // {gt:123}
+        var operator = scope.getKey(modelValue);
+        var operand = scope.getValue(modelValue);
+        var selection = { /* gt: '>' */}  // TODO: find H2 arrange this from options
+        return { // return value becomes viewValue
+          selection: selection,
+          operator: operator,
+          operand: operand
+        };
+      });
+
+      // viewValue -> modelValue
+      ngModelCtrl.$parsers.push(function(viewValue) { // {selection:{'gt':'>'},operator:'gt',operand:123}
+        var result = {}; // will become {gt:123}
+        try {
+          if (undef(viewValue.selection) || undef(viewValue.operand)) {
+            throw 'undef';
+          }
+          if (viewValue.operand === '') {
+            result = {}; throw 'null';
+          }
+          result[scope.getKey(viewValue.selection)] = viewValue.operand;
+        } catch (exc) {
+        } finally {
+          return result; // return value becomes modelValue
         }
-        scope.result = {};
-        scope.result[scope.getKey(newValues[0])] = newValues[1];
         function undef(thing) { return typeof thing === 'undefined'; }
+      });
+
+      // viewValue -> isolated scope
+      ngModelCtrl.$render = function() {
+        scope.selection = ngModelCtrl.$viewValue.selection;
+        // TODO - add operator (?)
+        scope.operand = ngModelCtrl.$viewValue.operand;
+      };
+
+      // isolated scope -> viewValue
+      scope.$watchGroup(['selection', 'operand'], function(newValues, oldValues) {
+        ngModelCtrl.$setViewValue({
+          selection: scope.selection,
+        // TODO - add operator (?)
+          operand: scope.operand
+        });
       });
     },
     controller: function ($scope) {
-      $scope.getKey = function(obj) {
-        try {
-          return Object.keys(obj)[0];
-        } catch (e) {}
-      };
-      $scope.getValue = function(obj) {
-        try {
-          return obj[Object.keys(obj)[0]];
-        } catch (e) {}
-      };
-   },
-    templateUrl: '../panel/bk/views/constraint/select_input.html'
-  }
+        $scope.getKey = function(obj) {
+          try {
+            return Object.keys(obj)[0];
+          } catch (e) {}
+        };
+        $scope.getValue = function(obj) {
+          try {
+            return obj[Object.keys(obj)[0]];
+          } catch (e) {}
+        };
+     }
+  };
 })
 .directive('constraintPaymentVolume', function (/*Range*/) {
   return {

@@ -22,9 +22,18 @@
         <select-input
          ng-model="payment_volume[0]"
          options="[{'gt':'>'},{'gte':'≥'}]"></select-input>
-        <pre>{{ _model }}</pre>
         <br/>
+        <pre>ngModel={{ payment_volume[0] }}</pre>
+        <hr/>
         <pre>{{ payment_volume }}</pre>
+    </div>
+    <hr/>
+    
+    <div ng-controller="ColourPickerController">
+      <label>CTRL_BACKGROUND</label>
+      <colour-picker ng-model="ctrl_background"></colour-picker>
+      
+      <div>ctrl_background={{ctrl_background}}</div>
     </div>
     <hr/>
     
