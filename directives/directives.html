@@ -21,12 +21,12 @@
     <div ng-controller="bkLabController">
         <select-input
          ng-model="payment_volume[0]"
-         options="[{'none':' '},{'gt':'>'},{'gte':'≥'}]"></select-input>
+         options="[{'gt':'>'},{'gte':'≥'}]"></select-input>
         <pre>ngModel={{ payment_volume[0] }}</pre>
         <hr/>
         <select-input
          ng-model="payment_volume[1]"
-         options="[{'none':' '},{'lt':'<'},{'lte':'≤'}]"></select-input>
+         options="[{'lt':'<'},{'lte':'≤'}]"></select-input>
         <pre>ngModel={{ payment_volume[1] }}</pre>
         <hr/>
         <pre>{{ payment_volume }}</pre>

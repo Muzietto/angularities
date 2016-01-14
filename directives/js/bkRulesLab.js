@@ -4,7 +4,7 @@ angular.module('bkRulesLab', [])
   $scope.rule = theRule();
   $scope.payment_volume = [{'gte':124},{'lt':490}];
 })
-.directive('selectInput', function (/*Range*/) {
+.directive('selectInput', function () {
   return {
     restrict: 'E',
     scope: { 
@@ -52,7 +52,6 @@ angular.module('bkRulesLab', [])
 
       // isolated scope -> viewValue
       scope.$watchGroup(['selection', 'operand'], function(newValues, oldValues) {
-        
         ngModelCtrl.$setViewValue({
           selection: scope.selection, // {gt:'>'}
           operand: scope.operand
