@@ -35,7 +35,7 @@ angular.module('RadifyExample', [])
       };
 
       // isolated scope -> viewValue
-      scope.$watchGroup(['red', 'green', 'blue'], function(/*newValue,oldValue*/) {
+      scope.$watchGroup(['red', 'green', 'blue'], function(/*newValues,oldValues*/) {
         ngModelCtrl.$setViewValue({
           red: scope.red,
           green: scope.green,
