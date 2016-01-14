@@ -2,7 +2,7 @@
 angular.module('bkRulesLab', [])
 .controller('bkLabController', function($scope) {
   $scope.rule = theRule();
-  $scope.payment_volume = [{'gt':123},{'lt':500}];
+  $scope.payment_volume = [{'gte':124},{'lt':490}];
 })
 .directive('selectInput', function (/*Range*/) {
   return {
@@ -19,17 +19,16 @@ angular.module('bkRulesLab', [])
         var operator = scope.getKey(modelValue);
         var operand = scope.getValue(modelValue);
         var selection = scope.options.filter(function(option) {
-          return option[operator];
+          return typeof option[operator] !== 'undefined';
         });
         return { // return value becomes viewValue
-          selection: selection,
-          operator: operator,
+          selection: selection[0],
           operand: operand
         };
       });
 
       // viewValue -> modelValue
-      ngModelCtrl.$parsers.push(function(viewValue) { // {selection:{'gt':'>'},operator:'gt',operand:123}
+      ngModelCtrl.$parsers.push(function(viewValue) { // {selection:{'gt':'>'},operand:123}
         var result = {}; // will become {gt:123}
         try {
           if (undef(viewValue.selection) || undef(viewValue.operand)) {
@@ -48,7 +47,6 @@ angular.module('bkRulesLab', [])
       // viewValue -> isolated scope
       ngModelCtrl.$render = function() {
         scope.selection = ngModelCtrl.$viewValue.selection;
-        scope.operator = ngModelCtrl.$viewValue.operator;
         scope.operand = ngModelCtrl.$viewValue.operand;
       };
 
@@ -57,7 +55,6 @@ angular.module('bkRulesLab', [])
         
         ngModelCtrl.$setViewValue({
           selection: scope.selection, // {gt:'>'}
-        // TODO - add operator (?)
           operand: scope.operand
         });
       });
