@@ -1,5 +1,8 @@
 
-var directivesApp = angular.module('directiveSandbox', ['bkRulesLab']);
+var directivesApp = angular.module('directiveSandbox', [
+  'bkRulesLab',
+  'RadifyExample'
+]);
 
 
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>DIRECTIVES</title>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +12,12 @@
     <script type="text/javascript" src="js/lib/angular.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/bkRulesLab.js"></script>
-    </head>
-    <p>try  http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/</p>
+    <script type="text/javascript" src="js/ngModelControllerSample.js"></script>
+  </head>
   <body ng-app="directiveSandbox">
-  
+    <p>try http://radify.io/blog/understanding-ngmodelcontroller-by-example-part-1/</p>
+    <p>try  http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/</p>
+
     <div ng-controller="bkLabController">
         <select-input
          ng-model="payment_volume[0]"
@@ -25,8 +27,23 @@
         <pre>{{ payment_volume }}</pre>
     </div>
     <hr/>
+    
+    <div ng-controller="ColourPickerController">
+      <label>FOREGROUND</label>
+      <colour-picker ng-model="ctrl_foreground"></colour-picker>
+      <label>BACKGROUND</label>
+      <colour-picker ng-model="ctrl_background"></colour-picker>
+      
+      <div style="padding:10px;font-weight:bold;width:200px;height:60px;background:{{ctrl_background}};color:{{ctrl_foreground}}">COLORED VERY NICE RESULTS</div>
+    </div>
+    <hr/>
+    
     <div ng-controller="docsTemplateUrlDirectiveController">
       <div my-customer></div>
+    </div>
+
+    <div ng-controller="docsRestrictDirectiveController">
+      <my-customer-tag></my-customer-tag>
     </div>
 
     <div ng-controller="docsRestrictDirectiveController">
