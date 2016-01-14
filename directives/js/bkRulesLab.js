@@ -7,7 +7,9 @@ angular.module('bkRulesLab', [])
 .directive('selectInput', function (/*Range*/) {
   return {
     restrict: 'E',
-    scope: { /* options?, whatever? */},
+    scope: { 
+      options: '=' // [{'gt':'>'},{'gte':'≥'}]
+    },
     require: 'ngModel',
     templateUrl: '../panel/bk/views/constraint/select_input.html',
     link: function(scope, element, attrs, ngModelCtrl) {
@@ -16,7 +18,9 @@ angular.module('bkRulesLab', [])
       ngModelCtrl.$formatters.push(function(modelValue) { // {gt:123}
         var operator = scope.getKey(modelValue);
         var operand = scope.getValue(modelValue);
-        var selection = { /* gt: '>' */}  // TODO: find H2 arrange this from options
+        var selection = scope.options.filter(function(option) {
+          return option[operator];
+        });
         return { // return value becomes viewValue
           selection: selection,
           operator: operator,
@@ -35,8 +39,7 @@ angular.module('bkRulesLab', [])
             result = {}; throw 'null';
           }
           result[scope.getKey(viewValue.selection)] = viewValue.operand;
-        } catch (exc) {
-        } finally {
+        } catch (exc) {} finally {
           return result; // return value becomes modelValue
         }
         function undef(thing) { return typeof thing === 'undefined'; }
@@ -45,14 +48,15 @@ angular.module('bkRulesLab', [])
       // viewValue -> isolated scope
       ngModelCtrl.$render = function() {
         scope.selection = ngModelCtrl.$viewValue.selection;
-        // TODO - add operator (?)
+        scope.operator = ngModelCtrl.$viewValue.operator;
         scope.operand = ngModelCtrl.$viewValue.operand;
       };
 
       // isolated scope -> viewValue
       scope.$watchGroup(['selection', 'operand'], function(newValues, oldValues) {
+        
         ngModelCtrl.$setViewValue({
-          selection: scope.selection,
+          selection: scope.selection, // {gt:'>'}
         // TODO - add operator (?)
           operand: scope.operand
         });
