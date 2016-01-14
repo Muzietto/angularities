@@ -34,7 +34,7 @@ angular.module('RadifyExample', [])
         scope.blue = ngModelCtrl.$viewValue.blue;
       };
 
-      // watcher of the skyes
+      // isolated scope -> viewValue
       scope.$watchGroup(['red', 'green', 'blue'], function(/*newValue,oldValue*/) {
         ngModelCtrl.$setViewValue({
           red: scope.red,
