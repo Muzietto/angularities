@@ -4,8 +4,6 @@ var directivesApp = angular.module('directiveSandbox', [
   'RadifyExample'
 ]);
 
-
-
 directivesApp.controller('docsTemplateUrlDirectiveController', function($scope){
     $scope.customer = {
       name: 'Naomi',
