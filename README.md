@@ -7,4 +7,6 @@ Start an http-server (get it from npm) and load the pages in the directives dir,
 - http://localhost:8080/directives/navigation-with-flex.html
 - http://localhost:8080/directives/bk_rules_lab.html (WIP)
 - http://localhost:8080/angello/angello.html (just following a Manning book)
+- http://localhost:8080/jenkov/watch-digest-apply.html (Jakob Jenkov rulez)
 
+Subdir panel contains reasonably completed files from a real webapp.
