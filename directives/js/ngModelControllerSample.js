@@ -1,3 +1,5 @@
+// http://radify.io/blog/understanding-ngmodelcontroller-by-example-part-1/
+// http://radify.io/blog/understanding-ngmodelcontroller-by-example-part-2/
 
 angular.module('RadifyExample', [])
 .controller('ColourPickerController', function($scope) {
