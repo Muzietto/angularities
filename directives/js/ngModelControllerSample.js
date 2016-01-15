@@ -5,6 +5,10 @@ angular.module('RadifyExample', [])
 .controller('ColourPickerController', function($scope) {
   $scope.ctrl_background = '000';
   $scope.ctrl_foreground = 'F00';
+  
+  angular.extend($scope, {
+    test: function() { alert('Submitted!!'); }
+  });
 })
 .directive('colourPicker', function () {
   return {
@@ -24,6 +28,12 @@ angular.module('RadifyExample', [])
       });
 
       // viewValue -> modelValue
+      // add validation first
+      ngModelCtrl.$parsers.push(function(viewValue) {
+        var blueSelected = (viewValue.red === '0' && viewValue.green === '0' && viewValue.blue === 'F');
+        ngModelCtrl.$setValidity(attrs.ngModel + '_badColour', !blueSelected);
+        return viewValue;
+      });
       ngModelCtrl.$parsers.push(function(viewValue) {
         var resultString = [viewValue.red, viewValue.green, viewValue.blue].join('');
         return '#' + resultString; // return value becomes modelValue

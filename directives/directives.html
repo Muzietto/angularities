@@ -40,14 +40,31 @@
       <div>ctrl_background={{ctrl_background}}</div>
     </div>
     <hr/>
-    
+
     <div ng-controller="ColourPickerController">
-      <label>FOREGROUND</label>
-      <colour-picker ng-model="ctrl_foreground"></colour-picker>
-      <label>BACKGROUND</label>
-      <colour-picker ng-model="ctrl_background"></colour-picker>
-      
-      <div style="padding:10px;font-weight:bold;width:200px;height:60px;background:{{ctrl_background}};color:{{ctrl_foreground}}">COLORED VERY NICE RESULTS</div>
+        <label>FOREGROUND</label>
+        <colour-picker ng-model="ctrl_foreground"></colour-picker>
+        <label>BACKGROUND</label>
+        <colour-picker ng-model="ctrl_background"></colour-picker>
+        
+        <div style="padding:10px;font-weight:bold;width:200px;height:60px;background:{{ctrl_background}};color:{{ctrl_foreground}}">COLORED VERY NICE RESULTS</div>
+    </div>
+    <hr/>
+
+    <div ng-controller="ColourPickerController">
+      <form name="myform" style="border:2px solid green;">
+        <label>FOREGROUND IN FORM</label>
+        <colour-picker ng-model="ctrl_foreground"></colour-picker>
+        <p ng-show="myform.$error.ctrl_foreground_badColour" class="bg-danger">No Blue please!!!</p>
+        <label>BACKGROUND IN FORM</label>
+        <colour-picker ng-model="ctrl_background"></colour-picker>
+        <p ng-show="myform.$error.ctrl_background_badColour" class="bg-danger">No Blue please!!!</p>
+        
+        <div style="padding:10px;font-weight:bold;width:200px;height:60px;background:{{ctrl_background}};color:{{ctrl_foreground}}">COLORED VERY NICE RESULTS</div>
+        <div>
+          <button ng-disabled="myform.$invalid" ng-click="test()" class="btn btn-primary">Submitta</button>
+        </div>
+      </form>
     </div>
     <hr/>
     
