@@ -1,0 +1,128 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="portlet portlet-default">
+      <div class="portlet-heading">
+        <div class="portlet-title">
+          <h4>{{ report.title }}</h4>
+        </div>
+        <div class="portlet-widgets">
+          <!-- Button Dropdown -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-green btn-xs dropdown-toggle" data-toggle="dropdown">
+              Export
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-left" role="menu">
+              <li><a data-ng-href="{{ report.exportUrl }}" target="_self"><i class="fa fa-cloud-download fa-fw"></i> CSV</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="portlet-body"
+           infinite-scroll='report.next()'
+           infinite-scroll-distance='1'
+           infinite-scroll-disable="report.isBusy()">
+
+        <div class="accordions_container">
+        <accordion>
+        <accordion-group
+              data-ng-show="!filter.allPricepointsFiltered(data.countries[country.code].prices)"
+              data-ng-repeat="country in availableCountries track by country.code">
+            <div accordion-heading>
+              <div data-ng-click="getCountryData(country)">
+                {{country.name}} 
+              </div>
+            </div>
+            <accordion>
+            <accordion-group 
+                  data-ng-show="!filter.allConnectivitiesFiltered(price.connectivities)"
+                  class="filtered_{{price.filtered}}" data-ng-repeat="price in $parent.countries[$parent.country.code].prices | orderBy: 'floatAmount'">
+                <div accordion-heading>
+                  <div style="float:left;text-decoration:underline;" data-ng-click="">
+                    {{price.amount}} 
+                  </div>
+                  <!--label style="margin-left:5px;">{{price.filtered}}</label-->
+                  <br clear="both"/>
+                </div>
+                <accordion>
+                  <accordion-group
+                  data-ng-show="!filter.allCreditProvidersFiltered(connectivity.credit_providers)"
+                  class="filtered_{{connectivity.filtered}}" data-ng-repeat="connectivity in $parent.price.connectivities">
+                    <div accordion-heading>
+                      <div data-ng-click="">
+                        {{connectivity.rid}} 
+                      </div>
+                    </div>
+                      <accordion>
+                        <accordion-group
+                        data-ng-show="!filter.allRoutesFiltered(creditProvider.routes)"
+                        class="filtered_{{creditProvider.filtered}}" data-ng-repeat="creditProvider in $parent.connectivity.credit_providers">
+                          <div accordion-heading>
+                            <div data-ng-click="">
+                              {{creditProvider.rid}} 
+                            </div>
+                          </div>
+                          <accordion>
+                            <accordion-group
+                            class="filtered_{{route.filtered}}"
+                            data-ng-repeat="route in $parent.creditProvider.routes">
+                              <div accordion-heading>
+                                <div data-ng-click="">
+                                  Shortcode:&nbsp;{{route.lane}};&nbsp;Type&nbsp;of&nbsp;Billing:&nbsp;{{route.type_of_billing}} 
+                                </div>
+                              </div>
+                              <div class="credit-provider-div navigation-div">
+                                  <h3>Route ID: <strong>{{$parent.$parent.creditProvider.rid}}</strong> 
+                                      - Mobile Network Code:
+                                      <strong>{{$parent.$parent.creditProvider.mnc}}</strong>
+                                      - Shortcode:
+                                      <strong>{{$parent.route.lane}}</strong>
+                                      - Type of billing:
+                                      <strong>{{$parent.route.type_of_billing}}</strong>
+                                  </h3>
+                                <p class="spending-limit">Context
+                                <strong>{{context.rid}}</strong></p>
+                                <ul style="list-style-type:none;padding:0px;">
+                                  <li class="filtered_{{context.filtered}}"
+                                  style="float:left;width:155px;margin-left:0px;margin-right:10px;margin-bottom:10px;padding:10px;background-color:#dddddd;border-radius:10px;box-shadow:3px 3px 5px #cccccc;" 
+                                  ng-repeat="context in route.contexts">
+                                    <label
+                                        style="font-weight:normal">Context:
+                                        <strong>{{context.rid}}</strong></label><br/>
+                                    <label
+                                        style="font-weight:normal">Anonymous Flow:
+                                        <strong>{{context.rules.anonymous_flow}}</strong></label><br/>
+                                    <label
+                                        style="font-weight:normal">Caring Message:
+                                        <strong>{{context.rules.caring_message}}</strong></label><br/>
+                                    <label
+                                        style="font-weight:normal">Daily Sp. Limit:
+                                        <strong>{{context.rules.daily_spending_limit}}</strong></label><br/>
+                                    <label
+                                        style="font-weight:normal">Invitation Message:
+                                        <strong>{{context.rules.invitation_message}}</strong></label><br/>
+                                    <label
+                                        style="font-weight:normal">Keyword:
+                                        <strong>{{context.rules.keyword}}</strong></label><br/>
+                                    <label
+                                        style="font-weight:normal">Monthly Sp. Limit:
+                                        <strong>{{context.rules.monthly_spending_limit}}</strong></label><br/>
+                                  </li>
+                                </ul>
+                              </div>
+                            </accordion-group>
+                          </accordion>
+                        </accordion-group>
+                      </accordion>
+                    </accordion-group>
+                  </accordion>
+                </accordion-group>
+              </accordion>
+            </accordion-group>
+          </accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
