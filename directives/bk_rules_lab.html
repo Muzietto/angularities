@@ -46,9 +46,9 @@
     <div class="horizon" ng-controller="bkLabController">
       <div id="directivesDiv">
         <div class="constraint-div" ng-repeat="(key, value) in rule.constraints">
-          <constraint-country ng-if="key === 'country'" rule="rule" api="bk/constraints" default-value="any"></constraint-country>
-          <constraint-payment-volume ng-if="key === 'payment_volume'" rule="rule" api="bk/constraints" default-value="{}"></constraint-payment-volume>
-          <constraint-amount ng-if="key === 'amount'" rule="rule" api="bk/constraints" default-type="puntual" default-value="any"></constraint-amount>
+          <constraint-country ng-if="key === 'country'" rule="rule" default-value="any"></constraint-country>
+          <constraint-payment-volume ng-if="key === 'payment_volume'" rule="rule" default-value="{}"></constraint-payment-volume>
+          <constraint-amount ng-if="key === 'amount'" rule="rule" default-type="puntual" default-value="any"></constraint-amount>
           <label>KEY: </label><pre style="display:inline;">{{ key }}</pre><br/>
           <pre>HOW DO I MAKE NEXT ONE CHANGE REAL-TIME?!?!?</pre>
           <label>VALUE: </label><pre style="display:inline;">{{ value | json }}</pre>

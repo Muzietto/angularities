@@ -75,7 +75,10 @@ angular.module('bkRulesLab', [])
 .directive('constraintPaymentVolume', function (/*Range*/) {
   return {
     restrict: 'E',
-    scope: { key : '=' },
+    scope: {
+      key : '=',
+      rule : '=' 
+    },
     controller: function ($scope) {
  //     if (angular.isString($scope.rule.constraints.payment_volume)) {
  //       $scope.rule.constraints.payment_volume = Range.fromString($scope.rule.constraints.payment_volume);

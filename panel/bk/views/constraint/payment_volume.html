@@ -1,4 +1,6 @@
 <div class="constraint-div">
-        <select-input _model="rule.constraints.payment_volume[0]" options="[{'':''},{'gt':'>'},{'gte':'≥'}]"></select-input>
-        <select-input _model="rule.constraints.payment_volume[1]" options="[{'':''},{'lt':'<'},{'lte':'≤'}]"></select-input>
+        <select-input data-ng-model="rule.constraints.payment_volume[0]" options="[{'gt':'>'},{'gte':'≥'}]"></select-input>
+        <select-input data-ng-model="rule.constraints.payment_volume[1]" options="[{'lt':'<'},{'lte':'≤'}]"></select-input>
+        
+        <pre>payment_volume={{rule.constraints.payment_volume}}</pre>
 </div>
