@@ -1,0 +1,931 @@
+{
+  "rid": "BA",
+  "name": "Bosnia And Herzegovina",
+  "mcc": "218",
+  "prices": [
+    {
+      "type": "point",
+      "amount": "0.0000",
+      "currency": "BAM",
+      "connectivities": [
+        {
+          "rid": "Mobileviewba",
+          "credit_providers": [
+            {
+              "rid": "mop\/BA\/BH mobile",
+              "mnc": "90",
+              "routes": [
+                {
+                  "type_of_billing": "MT",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type_of_billing": "MO",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "rid": "mop\/BA\/Eronet",
+              "mnc": "03",
+              "routes": [
+                {
+                  "type_of_billing": "MT",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type_of_billing": "MO",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "rid": "mop\/BA\/M-Tel",
+              "mnc": "05",
+              "routes": [
+                {
+                  "type_of_billing": "MT",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type_of_billing": "MO",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "point",
+      "amount": "2.3400",
+      "currency": "BAM",
+      "connectivities": [
+        {
+          "rid": "Mobileviewba",
+          "credit_providers": [
+            {
+              "rid": "mop\/BA\/BH mobile",
+              "mnc": "90",
+              "routes": [
+                {
+                  "type_of_billing": "MT",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type_of_billing": "MO",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "rid": "mop\/BA\/Eronet",
+              "mnc": "03",
+              "routes": [
+                {
+                  "type_of_billing": "MT",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type_of_billing": "MO",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "rid": "mop\/BA\/M-Tel",
+              "mnc": "05",
+              "routes": [
+                {
+                  "type_of_billing": "MT",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type_of_billing": "MO",
+                  "lane": "091810700",
+                  "contexts": [
+                    {
+                      "rid": "web",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "mobile",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sdk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "s2s",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "sms",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    },
+                    {
+                      "rid": "1dk",
+                      "rules": {
+                        "daily_spending_limit": 100,
+                        "monthly_spending_limit": 600,
+                        "anonymous_flow": false,
+                        "invitation_message": false,
+                        "caring_message": false,
+                        "keyword": "ONE"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

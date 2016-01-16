@@ -1,0 +1,203 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>ANGULARITIES</title>
+        <link rel="icon" href="../favicon.ico" -->
+
+        <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+        <script type="text/javascript" src="vendor/angular/angular.js"></script>
+        <script type="text/javascript" src="vendor/angular/angular-route.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+
+        <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="vendor/bootstrap/bootstrap-theme.min.css"></link>
+
+        <script type="text/javascript" src="app/app.js"></script>
+
+        <style>
+          h2, h3 {
+            margin-top:5px;
+            margin-left:5px;
+          }
+          .w49pc {
+            width:49%;
+          }
+          .separated {
+            padding:5px;
+            margin-bottom:5px;
+          }
+          a .btn.btn-default span.anchor-text {
+            color: #337ab7;
+          }
+          a .btn.btn-default span.anchor-text:hover {
+            color: #000000;
+            text-decoration: underline;
+          }
+          span.glyphicon {
+            color: #000000;
+          }
+        </style>
+
+    </head>
+    <body data-ng-app="angularities">
+        <div class="container">
+          <div class="col-md-12 text-center">
+          <h1>Angularities - AngularJS sandbox</h1>
+          </div>
+          <div class="col-md-8">
+            <div class="img-rounded" style ="padding:8px; background-color: #2ba6cb;">
+              <h2>Sample Directives</h2>
+              <div class="img-rounded clearfix" style="margin:5px;0px;">
+                <a href="app/directives/directives.html" target="_blank">
+                  <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="anchor-text">Mixed Directives</span>
+                  </button>
+                </a>
+                <span class="pull-right w49pc">
+                    <b>Lots of directives</b> just the way they should be
+                </span>
+              </div>
+              <div class="img-rounded clearfix" style="margin:5px;0px;">
+                <a href="app/directives/bk_rules_lab.html" target="_blank">
+                  <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="anchor-text">BK Rules Lab</span>
+                  </button>
+                </a>
+                <span class="pull-right w49pc">
+                  <b>Work in Progress</b> for a complete handling of rule constraints
+                </span>
+              </div>
+              <div class="img-rounded clearfix" style="margin:5px;0px;">
+                <a href="app/directives/navigation-with-bootstrap-accordions.html" target="_blank">
+                    <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                      <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                      <span class="anchor-text">UI-Bootstrap Accordions test</span>
+                    </button>
+                </a>
+                <span class="pull-right w49pc">
+                  <b>UI-Bootstrap and Flex Admin</b> Working example of embedding foreign widgets
+                </span>
+              </div>
+              <div class="img-rounded clearfix" style="margin:5px;0px;">
+                <a href="app/directives/navigation-with-flex-accordions.html" target="_blank">
+                    <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                      <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                      <span class="anchor-text">Flex Admin Accordions test</span>
+                    </button>
+                </a>
+                <span class="pull-right w49pc">
+                  <b>Flex Admin solo</b> showcasing accordions
+                </span>
+              </div>
+              <div class="img-rounded clearfix" style="margin:5px;0px;">
+                <a href="/dashboard" target="_blank">
+                    <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                      <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                      <span class="anchor-text">Final Accordions</span>
+                    </button>
+                </a>
+                <span class="pull-right w49pc">
+                  <b>ROUTE NOT WORKING!</b> Details by country, pricepoints and connectivities 
+                </span>
+              </div>
+            </div>
+            <div class="img-rounded" style ="padding:8px; background-color: #2ba6cb; margin-top:35px;">
+              <h2>Junk</h2>
+              <div class="img-rounded clearfix" style="margin:5px;0px;">
+                 <a href="app/directives/navigation-with-flex.html" target="_blank">
+                    <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                      <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                      <span class="anchor-text">Flex Admin native elements</span>
+                    </button>
+                </a>
+                <span class="pull-right w49pc">
+                        <b>Simulating Accordions</b> with plain Flex Admin selects in page 
+                </span>
+              </div>
+              <div class="img-rounded clearfix" style="margin:5px;5px;">
+                <a href="app/directives/compileTest.html" target="_blank">
+                  <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="anchor-text">Compile Test</span>
+                  </button>
+                </a>
+                <span class="pull-right w49pc">
+                    Check all <b>connectivity</b> configuration
+                </span>
+              </div>
+              <div class="img-rounded clearfix" style="margin:5px;0px;">
+                 <a href="app/jenkov/watch-digest-apply.html" target="_blank">
+                    <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                      <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                      <span class="anchor-text">Jenkov</span>
+                    </button>
+                </a>
+                <span class="pull-right w49pc">
+                        <b>Trodding</b> in the steps of Jacob Jenkov 
+                </span>
+              </div>
+              <div class="img-rounded clearfix" style="margin:5px;0px;">
+                 <a href="app/directives/navigation2.html" target="_blank">
+                    <button type="button" class="btn btn-default btn-lg pull-left w49pc">
+                      <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                      <span class="anchor-text">Cascading directive</span>
+                    </button>
+                </a>
+                <span class="pull-right w49pc">
+                  Milestone during preparation of final accordions page 
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+              <div class="img-rounded" style ="padding:8px; background-color: #e19d38; margin-bottom:35px;">
+                <h2>Unit Testing</h2>
+                <div class="img-rounded clearfix" style="margin:5px;0px;">
+                  <a href="#" target="_blank">
+                    <button type="button" class="btn btn-default pull-left w49pc">
+                      <span class="anchor-text">Route<br/>Testing</span>
+                    </button>
+                  </a>
+                  <span class="pull-right w49pc">
+                    <b>Testing pesky $httpRouters</b>
+                  </span>
+                </div>
+                <div class="img-rounded clearfix" style="margin:5px;0px;">
+                  <a href="#" target="_blank">
+                    <button type="button" class="btn btn-default pull-left w49pc">
+                      <span class="anchor-text">Directives<br/>Testing</span>
+                    </button>
+                  </a>
+                  <span class="pull-right w49pc">
+                    <b>Terra Incognita</b>
+                  </span>
+                </div>
+              </div>
+              <div class="img-rounded" style ="padding:8px; background-color: #F030C0; margin-bottom:35px;">
+                <h2>E2E Testing</h2>
+                <div class="img-rounded clearfix" style="margin:5px;0px;">
+                  <a href="#" target="_blank">
+                    <button type="button" class="btn btn-default pull-left w49pc">
+                      <span class="anchor-text">TBD</span>
+                    </button>
+                  </a>
+                  <span class="pull-right w49pc">
+                    To be <b>DEFINED</b>
+                  </span>
+                </div>
+              </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="container">
+              <p class="text-muted" style="padding:15px;">Graciously brought to you by <a target="_blank" href="http://faustinelli.wordpress.com">Muzietto</a></p>
+          </div>
+        </footer>
+    </body>
+</html>
