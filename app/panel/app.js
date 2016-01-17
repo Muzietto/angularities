@@ -2,11 +2,10 @@
 (function() {
   'use strict';
   
-  angular.module('angularities', ['ngRoute'])
+  angular.module('onebip.panel', ['ngRoute', 'onebip.panel.main'])
     .config(function($routeProvider) {
       $routeProvider
         .when('/', { templateUrl: 'main.html' });
-        //.when('/dashboard', { templateUrl: 'app/panel/dashboard/views/configuration.html' });
     });
 
 })();

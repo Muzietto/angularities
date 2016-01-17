@@ -2,7 +2,7 @@
 (function() {
   'user strint';
 
-  angular.module('mainModuleForever', ['onebip.panel.dashboard'])
+  angular.module('onebip.panel.main', ['onebip.panel.dashboard'])
   .controller('MainController', function() {})
   .directive('menuLink', function () {
     return {
