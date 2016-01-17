@@ -9,97 +9,89 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
+    <link rel="stylesheet" type="text/css" href="css/angularities.css">
+    
     <script type="text/javascript" src="/vendor/angular/angular.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/bkRulesLab.js"></script>
     <script type="text/javascript" src="js/ngModelControllerSample.js"></script>
   </head>
   <body ng-app="directiveSandbox">
-    <p>try http://radify.io/blog/understanding-ngmodelcontroller-by-example-part-1/</p>
-    <p>try  http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/</p>
-
-    <div ng-controller="bkLabController">
-        <select-input
-         ng-model="payment_volume[0]"
-         options="[{'gt':'>'},{'gte':'≥'}]"></select-input>
-        <pre>ngModel={{ payment_volume[0] }}</pre>
-        <hr/>
-        <select-input
-         ng-model="payment_volume[1]"
-         options="[{'lt':'<'},{'lte':'≤'}]"></select-input>
-        <pre>ngModel={{ payment_volume[1] }}</pre>
-        <hr/>
-        <pre>{{ payment_volume }}</pre>
-    </div>
-    <hr/>
-    
-    <div ng-controller="ColourPickerController">
-      <label>CTRL_BACKGROUND</label>
-      <colour-picker ng-model="ctrl_background"></colour-picker>
-      
-      <div>ctrl_background={{ctrl_background}}</div>
-    </div>
-    <hr/>
-
-    <div ng-controller="ColourPickerController">
-        <label>FOREGROUND</label>
-        <colour-picker ng-model="ctrl_foreground"></colour-picker>
-        <label>BACKGROUND</label>
+    <p class="reference">try http://radify.io/blog/understanding-ngmodelcontroller-by-example-part-1/</p>
+    <p class="reference">try  http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/</p>
+    <div class="horizon">
+      <div ng-controller="bkLabController" class="boxed">
+          <select-input
+           ng-model="payment_volume[0]"
+           options="[{'gt':'>'},{'gte':'≥'}]"></select-input>
+          <pre>ngModel={{ payment_volume[0] }}</pre>
+          <hr/>
+          <select-input
+           ng-model="payment_volume[1]"
+           options="[{'lt':'<'},{'lte':'≤'}]"></select-input>
+          <pre>ngModel={{ payment_volume[1] }}</pre>
+          <hr/>
+          <pre>{{ payment_volume }}</pre>
+      </div>
+      <hr/>    
+      <div ng-controller="ColourPickerController" class="boxed">
+        <label>CTRL_BACKGROUND</label>
         <colour-picker ng-model="ctrl_background"></colour-picker>
         
-        <div style="padding:10px;font-weight:bold;width:200px;height:60px;background:{{ctrl_background}};color:{{ctrl_foreground}}">COLORED VERY NICE RESULTS</div>
+        <div>ctrl_background={{ctrl_background}}</div>
+      </div>
+      <hr/>
+      <div ng-controller="ColourPickerController" class="boxed">
+          <label>FOREGROUND</label>
+          <colour-picker ng-model="ctrl_foreground"></colour-picker>
+          <label>BACKGROUND</label>
+          <colour-picker ng-model="ctrl_background"></colour-picker>
+          
+          <div style="padding:10px;font-weight:bold;width:200px;height:60px;background:{{ctrl_background}};color:{{ctrl_foreground}}">COLORED VERY NICE RESULTS</div>
+      </div>
+      <hr/>
+      <div ng-controller="ColourPickerController" class="boxed">
+        <form name="myform" style="border:2px solid green;padding:5px;">
+          <label>FOREGROUND IN FORM</label>
+          <colour-picker ng-model="ctrl_foreground"></colour-picker>
+          <p ng-show="myform.$error.ctrl_foreground_badColour" class="bg-danger">No Blue please!!!</p>
+          <label>BACKGROUND IN FORM</label>
+          <colour-picker ng-model="ctrl_background"></colour-picker>
+          <p ng-show="myform.$error.ctrl_background_badColour" class="bg-danger">No Blue please!!!</p>
+          
+          <div style="padding:10px;font-weight:bold;width:200px;height:60px;background:{{ctrl_background}};color:{{ctrl_foreground}}">COLORED VERY NICE RESULTS</div>
+          <div>
+            <button ng-disabled="myform.$invalid" ng-click="test()" class="btn btn-primary">Submitta</button>
+          </div>
+        </form>
+      </div>
+      <hr/>   
+      <div ng-controller="docsTemplateUrlDirectiveController" class="boxed">
+        <div my-customer></div>
+      </div>
+      <div ng-controller="docsRestrictDirectiveController" class="boxed">
+        <my-customer-tag></my-customer-tag>
+      </div>
+      <div ng-controller="docsRestrictDirectiveController" class="boxed">
+        <my-customer-tag></my-customer-tag>
+      </div>
+      <div ng-controller="docsIsolateScopeDirectiveController" class="boxed">
+        <my-customer-tag-with-info customer="naomi"></my-customer-tag-with-info>
+        <hr>
+        <my-customer-tag-with-info customer="igor"></my-customer-tag-with-info>
+      </div>
+      <div ng-controller="docsTimeDirectiveController" class="boxed">
+        Date Format: <input ng-model="myDateFormat"> <br/>
+        Current time is: <current-time  current-time-date-format="myDateFormat"></current-time>
+      </div>
+      <div ng-controller="docsTransclusionDirectiveController" class="boxed">
+        <style>.alert {color:red;margin-top:30px;}</style>
+        <my-dialog>Check out the contents, {{name}}!</my-dialog>
+      </div>
+      <div ng-controller="docsIsoFnBindExampleController" class="boxed">
+        <style>.alert {color:red;margin-top:30px;}</style>
+        <my-dialog-with-buttons ng-hide="dialogIsHidden" on-close="hideDialog()">Check out the contents, {{name}}!</my-dialog-with-buttons>
+      </div>
     </div>
-    <hr/>
-
-    <div ng-controller="ColourPickerController">
-      <form name="myform" style="border:2px solid green;">
-        <label>FOREGROUND IN FORM</label>
-        <colour-picker ng-model="ctrl_foreground"></colour-picker>
-        <p ng-show="myform.$error.ctrl_foreground_badColour" class="bg-danger">No Blue please!!!</p>
-        <label>BACKGROUND IN FORM</label>
-        <colour-picker ng-model="ctrl_background"></colour-picker>
-        <p ng-show="myform.$error.ctrl_background_badColour" class="bg-danger">No Blue please!!!</p>
-        
-        <div style="padding:10px;font-weight:bold;width:200px;height:60px;background:{{ctrl_background}};color:{{ctrl_foreground}}">COLORED VERY NICE RESULTS</div>
-        <div>
-          <button ng-disabled="myform.$invalid" ng-click="test()" class="btn btn-primary">Submitta</button>
-        </div>
-      </form>
-    </div>
-    <hr/>
-    
-    <div ng-controller="docsTemplateUrlDirectiveController">
-      <div my-customer></div>
-    </div>
-
-    <div ng-controller="docsRestrictDirectiveController">
-      <my-customer-tag></my-customer-tag>
-    </div>
-
-    <div ng-controller="docsRestrictDirectiveController">
-      <my-customer-tag></my-customer-tag>
-    </div>
-
-    <div ng-controller="docsIsolateScopeDirectiveController">
-      <my-customer-tag-with-info customer="naomi"></my-customer-tag-with-info>
-      <hr>
-      <my-customer-tag-with-info customer="igor"></my-customer-tag-with-info>
-    </div>
-
-    <div ng-controller="docsTimeDirectiveController">
-      Date Format: <input ng-model="myDateFormat"> <br/>
-      Current time is: <current-time  current-time-date-format="myDateFormat"></current-time>
-    </div>
-
-    <div ng-controller="docsTransclusionDirectiveController">
-      <style>.alert {color:red;margin-top:30px;}</style>
-      <my-dialog>Check out the contents, {{name}}!</my-dialog>
-    </div>
-
-    <div ng-controller="docsIsoFnBindExampleController">
-      <style>.alert {color:red;margin-top:30px;}</style>
-      <my-dialog-with-buttons ng-hide="dialogIsHidden" on-close="hideDialog()">Check out the contents, {{name}}!</my-dialog-with-buttons>
-    </div>
-
   </body>
 </html>

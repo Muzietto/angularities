@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- http://tutorials.jenkov.com/angularjs/watch-digest-apply.html -->
+    
     <title>watch-digest-apply</title>
     
     <meta charset="utf-8">
@@ -9,12 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="../directives/css/angularities.css">
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
   </head>
   <body ng-app="myApp">
 
-      <div ng-controller="myController">
+    <p class="reference">http://tutorials.jenkov.com/angularjs/watch-digest-apply.html</p>
+    <div class="horizon compact">
+      <div ng-controller="myController" class="boxed">
           <label id="firstLabel">{{data.time}}</label>
           <br/>
           <label id="secondLabel"></label>
@@ -25,10 +28,10 @@
           <button id="updateTimeButton3">update time - with apply</button>
 
       </div>
-
+    </div>
 
       <script>
-          var module       = angular.module("myApp", []);
+          var module = angular.module("myApp", []);
           var myController1 = module.controller("myController", function($scope) {
 
               $scope.data = { time : new Date() };

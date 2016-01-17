@@ -9,43 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <style>
-      .horizon {
-        width: 70%;
-        min-height:400px;
-        margin: 0 auto;
-        background-color: pink;
-      }
-      #directivesDiv {
-        width: 90%;
-        margin: 10px auto;
-        min-height: 180px;
-        border: 2px solid red;
-        background-color: white;
-      }
-      #modelDiv {
-        width: 90%;
-        margin: 10px auto;
-        min-height: 60px;
-        border: 2px solid blue;
-        background-color: whitesmoke;
-      }
-      .constraint-div {
-        width: 90%;
-        margin: 10px auto;
-        padding: 5px;
-        border: 1px solid green;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/angularities.css">
 
     <script type="text/javascript" src="/vendor/angular/angular.js"></script>
     <script type="text/javascript" src="js/bkRulesLab.js"></script>
   </head>
   <body ng-app="bkRulesLab">
-<p>study http://thesmithfam.org/blog/2012/12/17/communicating-between-directives-in-angularjs/</p>
+<p class="reference">study http://thesmithfam.org/blog/2012/12/17/communicating-between-directives-in-angularjs/</p>
     <div class="horizon" ng-controller="bkLabController">
       <div id="directivesDiv">
-        <div class="constraint-div" ng-repeat="(key, value) in rule.constraints">
+        <div class="constraint-div boxed" ng-repeat="(key, value) in rule.constraints">
           <constraint-country ng-if="key === 'country'" rule="rule" default-value="any"></constraint-country>
           <constraint-payment-volume ng-if="key === 'payment_volume'" rule="rule" default-value="{}"></constraint-payment-volume>
           <constraint-amount ng-if="key === 'amount'" rule="rule" default-type="puntual" default-value="any"></constraint-amount>
@@ -54,7 +27,7 @@
           <label>VALUE: </label><pre style="display:inline;">{{ value | json }}</pre>
         </div>
       </div>
-      <div id="modelDiv">
+      <div id="modelDiv" class="boxed">
         <label>RULE: </label><pre class="ordered-pre">{{ rule | json }}</pre>
       </div>
     </div>

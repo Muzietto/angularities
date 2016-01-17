@@ -1,0 +1,41 @@
+body {
+  font-family: sans-serif;
+}
+.horizon {
+  width: 70%;
+  min-height:400px;
+  margin: 0 auto;
+  background-color: pink;
+  padding: 10px;
+}
+.compact {
+  min-height:5px;
+}
+#directivesDiv {
+  width: 90%;
+  margin: 10px auto;
+  min-height: 180px;
+  border: 2px solid red;
+  background-color: white;
+}
+#modelDiv {
+  width: 90%;
+  margin: 10px auto;
+  min-height: 60px;
+  border: 2px solid blue;
+  background-color: whitesmoke;
+}
+.constraint-div {
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px;
+  border: 1px solid green;
+}
+p.reference {
+  margin-left: 20px;
+}
+div.boxed {
+  padding: 5px;
+  margin: 5px;
+  border: 1px dashed grey;
+}
