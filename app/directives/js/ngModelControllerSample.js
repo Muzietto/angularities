@@ -55,6 +55,6 @@ angular.module('RadifyExample', [])
         });
       });
     },
-    templateUrl: 'views/colour-picker.html'
+    templateUrl: 'view/colour-picker.html'
   }
 });
