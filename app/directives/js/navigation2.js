@@ -1,13 +1,13 @@
 var navigationApp = angular.module('navigationSandbox', ['ui.bootstrap']);
 
-var directiveFrom = function(templateName,varName){
-  return function($templateCache){
+var directiveFrom = function(templateName, varName){
+  return function($templateCache) {
     return {
       restrict: 'E',
       template: $templateCache.get(templateName),
       transclude: true,
-      link: function(scope,element,attrs){
-        scope.$watch(attrs[varName],function(value){
+      link: function(scope, element, attrs){
+        scope.$watch(attrs[varName], function(value) {
           if (!value) return;
           repaint();
         });
@@ -33,10 +33,21 @@ navigationApp.controller('template3Controller', function($scope){
     $scope.currentCreditProvider = null;
     $scope.countries = blob.countries;
   })
-  .directive('countryData',directiveFrom('country.tmpl','name'))
-  .directive('priceData',directiveFrom('price.tmpl','amount'))
-  .directive('connectivityData',directiveFrom('connectivity.tmpl','rid'))
-  .directive('creditProviderData',directiveFrom('creditProvider.tmpl','rid'))
+  .directive('countryData', directiveFrom('country.tmpl', 'name'))
+  .directive('priceData', directiveFrom('price.tmpl', 'amount'))
+  .directive('connectivityData', directiveFrom('connectivity.tmpl', 'rid'))
+  .directive('creditProviderData', directiveFrom('creditProvider.tmpl', 'rid'))
+  .directive('menuLink', function () {
+    return {
+      restrict: 'E',
+      replace: true, // 
+      transclude: true,
+      templateUrl: 'view/menuLink.html',
+      scope: {
+        path: '@'
+      }
+    };
+  });
 
 var blob = {
     "countries": [
