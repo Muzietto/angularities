@@ -19,33 +19,9 @@ angular.module('onebip.panel.dashboard.controllers', ['ui.bootstrap'])
     $scope.countries = $scope.data.countries;
 
     $scope.availableCountries = [
-      { name: 'Argentina', code: 'AR' },
-      { name: 'Australia', code: 'AU' },
-      { name: 'Austria', code: 'AT' },
-      { name: 'Belgium', code: 'BE' },
       { name: 'Bosnia and Herzegovina', code: 'BA' },
-      { name: 'Brazil', code: 'BR' },
-      { name: 'Canada', code: 'CA' },
-      { name: 'Chile', code: 'CL' },
-      { name: 'Colombia', code: 'CO' },
-      { name: 'Ecuador', code: 'EC' },
-      { name: 'Egypt', code: 'EG' },
       { name: 'Greece', code: 'GR' },
-      { name: 'France', code: 'FR' },
-      { name: 'Germany', code: 'DE' },
-      { name: 'Indonesia', code: 'ID' },
-      { name: 'Iraq', code: 'IQ' },
-      { name: 'Italy', code: 'IT' },
-      { name: 'Kuwait', code: 'KQ' },
-      { name: 'Mexico', code: 'MX' },
-      { name: 'Netherlands', code: 'NL' },
-      { name: 'Norway', code: 'NO' },
-      { name: 'Portugal', code: 'PT' },
-      { name: 'Russia', code: 'RU' },
-      { name: 'Spain', code: 'ES' },
-      { name: 'Switzerland', code: 'CH' },
-      { name: 'Turkey', code: 'TR' },
-      { name: 'United Kingdom', code: 'UK' }
+      { name: 'Iraq', code: 'IQ' }
     ];
 
     // listener for criteria.price
