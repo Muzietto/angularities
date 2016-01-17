@@ -88,85 +88,145 @@
         </ul>
       <div>
     </script>
-    
+    <div id="wrapper">
 
-  <!-- begin MAIN PAGE CONTENT -->
-  <div id="page-wrapper">
-    <div class="page-content">
-      <!-- begin PAGE TITLE ROW -->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="page-title">
-            <h1>Basic Form Elements
-              <small>Form Features</small>
-            </h1>
-          </div>
-        </div>
-        <!-- /.col-lg-12 -->
-      </div>
-      <!-- /.row -->
-      <!-- end PAGE TITLE ROW -->
+        <!-- begin TOP NAVIGATION -->
+        <nav class="navbar-top" role="navigation" data-ng-hide="">
 
-      <!-- begin MAIN PAGE ROW -->
-      <div class="row">
-        <!-- begin RIGHT COLUMN -->
-        <div class="col-lg-6">
-          <div class="row">
-            <!-- Form Controls -->
-            <div class="col-lg-12">
-              <div class="portlet portlet-red">
-                <div class="portlet-heading">
-                  <div class="portlet-title">
-                    <h4>Basic Form Controls</h4>
-                  </div>
-                  <div class="portlet-widgets">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#formControls">
-                      <i class="fa fa-chevron-down"></i>
-                    </a>
-                  </div>
-                  <div class="clearfix"></div>
+            <!-- begin BRAND HEADING -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle pull-right collapsed" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <i class="fa fa-bars"></i> Menu
+                </button>
+                <div class="navbar-brand">
+                    <span style="color: #fff;">Flex Admin</span>
                 </div>
-                <div id="formControls" class="panel-collapse collapse in">
-                  <div class="portlet-body" ng-controller="template3Controller">
-                    <h3>Select a country - static accordion</h3>
-                    <accordion close-others="oneAtATime">
-                      <accordion-group heading="Armenia">
-                        <p>123</p>
-                        <pre>prices_01</pre>
-                      </accordion-group>
-                      <accordion-group heading="Latvia">
-                        <p>345</p>
-                        <pre>latvian prices</pre>
-                      </accordion-group>
-                    </accordion>
-
-                    <h3>Select a country - dynamic accordion</h3>
-                    <accordion close-others="oneAtATime">
-                      <accordion-group heading="{{country.name}}" ng-repeat="country in countries track by country.mcc">
-                        <p>{{country.mcc}}</p>
-                        <pre>{{country.prices}}</pre>
-                      </accordion-group>
-                    </accordion>
-                  </div>
-                </div>
-              </div>
-              <!-- /.portlet -->
             </div>
-            <!-- /.col-lg-12 (nested) -->
-            <!-- End Form Controls -->
+            <!-- end BRAND HEADING -->
+
+            <div class="nav-top">
+
+                <ul class="nav navbar-left">
+                    <li class="tooltip-sidebar-toggle">
+                        <a href="#" id="sidebar-toggle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Sidebar Toggle">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <!-- You may add more widgets here using <li> -->
+                </ul>
+
+                <ul class="nav navbar-right">
+                    <!-- begin USER ACTIONS DROPDOWN -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a class="logout_open" href="#" data-ng-click="logout()" data-popup-ordinal="0">
+                                    <i class="fa fa-sign-out"></i> Logout
+                                    <strong>{{ username() }}</strong>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-menu -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <!-- end USER ACTIONS DROPDOWN -->
+                </ul>
+
+            </div>
+            <!-- /.nav-top -->
+        </nav>
+        <!-- /.navbar-top -->
+        <!-- end TOP NAVIGATION -->
+        <!-- begin SIDE NAVIGATION -->
+        <nav class="navbar-side ng-cloak" role="navigation">
+            <div class="navbar-collapse sidebar-collapse" ng-include src="'views/menu.html'">
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <!-- /.navbar-side -->
+        <!-- end SIDE NAVIGATION -->
+
+
+      <!-- begin MAIN PAGE CONTENT -->
+      <div id="page-wrapper">
+        <div class="page-content">
+          <!-- begin PAGE TITLE ROW -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="page-title">
+                <h1>Basic Form Elements
+                  <small>Form Features</small>
+                </h1>
+              </div>
+            </div>
+            <!-- /.col-lg-12 -->
           </div>
-          <!-- /.row (nested) -->
+          <!-- /.row -->
+          <!-- end PAGE TITLE ROW -->
+
+          <!-- begin MAIN PAGE ROW -->
+          <div class="row">
+            <!-- begin RIGHT COLUMN -->
+            <div class="col-lg-6">
+              <div class="row">
+                <!-- Form Controls -->
+                <div class="col-lg-12">
+                  <div class="portlet portlet-red">
+                    <div class="portlet-heading">
+                      <div class="portlet-title">
+                        <h4>Basic Form Controls</h4>
+                      </div>
+                      <div class="portlet-widgets">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#formControls">
+                          <i class="fa fa-chevron-down"></i>
+                        </a>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div id="formControls" class="panel-collapse collapse in">
+                      <div class="portlet-body" ng-controller="template3Controller">
+                        <h3>Select a country - static accordion</h3>
+                        <accordion close-others="oneAtATime">
+                          <accordion-group heading="Armenia">
+                            <p>123</p>
+                            <pre>prices_01</pre>
+                          </accordion-group>
+                          <accordion-group heading="Latvia">
+                            <p>345</p>
+                            <pre>latvian prices</pre>
+                          </accordion-group>
+                        </accordion>
+
+                        <h3>Select a country - dynamic accordion</h3>
+                        <accordion close-others="oneAtATime">
+                          <accordion-group heading="{{country.name}}" ng-repeat="country in countries track by country.mcc">
+                            <p>{{country.mcc}}</p>
+                            <pre>{{country.prices}}</pre>
+                          </accordion-group>
+                        </accordion>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.portlet -->
+                </div>
+                <!-- /.col-lg-12 (nested) -->
+                <!-- End Form Controls -->
+              </div>
+              <!-- /.row (nested) -->
+            </div>
+            <!-- /.col-lg-6 -->
+            <!-- end RIGHT COLUMN -->
+          </div>
+          <!-- /.row -->
+          <!-- end MAIN PAGE ROW -->
         </div>
-        <!-- /.col-lg-6 -->
-        <!-- end RIGHT COLUMN -->
+        <!-- /.page-content -->
       </div>
-      <!-- /.row -->
-      <!-- end MAIN PAGE ROW -->
-    </div>
-    <!-- /.page-content -->
-  </div>
-  <!-- /#page-wrapper -->
-  <!-- end MAIN PAGE CONTENT -->
+      <!-- /#page-wrapper -->
+    </div>  <!-- end MAIN PAGE CONTENT -->
     <!-- /#logout -->
     <!-- Logout Notification jQuery -->
     <script src="/vendor/flex/js/plugins/popupoverlay/logout.js"></script>
