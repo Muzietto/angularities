@@ -28,15 +28,20 @@
 
     <script type="text/javascript" src="/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="/vendor/angular/angular.js"></script>
-    <script type="text/javascript" src="js/navigation2.js"></script>
+    <script type="text/javascript" src="/vendor/angular/angular-route.js"></script>
+    <script type="text/javascript" src="main/js/module.js"></script>
+    <script type="text/javascript" src="dashboard/js/module.js"></script>
+    <script type="text/javascript" src="dashboard/js/controllers.js"></script>
+    <script type="text/javascript" src="dashboard/js/services.js"></script>
+    <script type="text/javascript" src="dashboard/js/directives.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
 
     <style>
       .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
     </style>
   </head>
-  <body ng-app="navigationSandbox">
-    <div id="wrapper">
+  <body ng-app="mainModuleForever">
+    <div id="wrapper" ng-controller="MainController">
 
         <!-- begin TOP NAVIGATION -->
         <nav class="navbar-top" role="navigation" data-ng-hide="">
@@ -89,7 +94,7 @@
         <!-- end TOP NAVIGATION -->
         <!-- begin SIDE NAVIGATION -->
         <nav class="navbar-side" role="navigation">
-            <div class="navbar-collapse sidebar-collapse" ng-include src="'view/menu.html'">
+            <div class="navbar-collapse sidebar-collapse">
               <ul id="side" class="nav navbar-nav side-nav">
                 <!-- begin SIDE NAV USER PANEL -->
                 <li class="side-user">
@@ -110,7 +115,7 @@
                     </a>
                     <ul class="collapse nav" id="dashboards">
                         <li>
-                          <menu-link path="#">
+                          <menu-link path="/dashboard/configuration">
                             Purchase configuration
                           </menu-link>
                         </li>
@@ -127,8 +132,6 @@
       <!-- begin MAIN PAGE CONTENT -->
       <div id="page-wrapper">
         <div class="page-content">
-
-        <b>birilll</p>
         
         </div>
         <!-- /.page-content -->
