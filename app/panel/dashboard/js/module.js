@@ -12,7 +12,7 @@
 
     $routeProvider
       .when('/dashboard/configuration', {
-        templateUrl: '/dashboard/views/configuration.html',
+        templateUrl: '/app/panel/dashboard/views/configuration.html',
         controller: 'ConfigurationMain'
       });
   }]);

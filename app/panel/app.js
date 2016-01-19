@@ -3,9 +3,11 @@
   'use strict';
   
   angular.module('onebip.panel', ['ngRoute', 'onebip.panel.main'])
-    .config(function($routeProvider) {
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
       $routeProvider
-        .when('/', { templateUrl: 'main.html' });
-    });
+        .when('/', {});
+      
+      $locationProvider.html5Mode(true);
+    }]);
 
 })();

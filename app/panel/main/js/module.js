@@ -9,7 +9,7 @@
       restrict: 'E',
       replace: true, // 
       transclude: true,
-      templateUrl: 'view/menuLink.html',
+      templateUrl: '/app/panel/view/menuLink.html',
       scope: {
         path: '@'
       }
