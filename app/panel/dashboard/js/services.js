@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('onebip.panel.dashboard.services', [])
-
 .service('DashboardDataService', ['$http', 'DashboardFilterService', function($http,DashboardFilterService){
   var service = this;
   var filter = DashboardFilterService;
@@ -10,7 +9,7 @@ angular.module('onebip.panel.dashboard.services', [])
 
   this.getCountryData = function(countryCode,cb) {
 
-    $http.get('/api/dashboard/configuration/country/' + countryCode)
+    $http.get('/app/panel/dashboard/configuration/country/' + countryCode + '.json')
     .success(function(data){
       var pdata = preprocessCountryData(data);
       service.countries[countryCode] = pdata;
@@ -134,7 +133,6 @@ angular.module('onebip.panel.dashboard.services', [])
     return countryData;
   }
 }])
-
 .service('DashboardFilterService', function(){
   var service = this;
 
@@ -145,13 +143,6 @@ angular.module('onebip.panel.dashboard.services', [])
   this.availableContexts = [];
 
   this.filters = [
-    /*{ 
-      name: 'country', 
-      label: 'Country',
-             type: 'select',
-             items: service.availableCountries,
-             chosen: false
-           }, */
            { 
              name: 'price', 
              label: 'Price',
@@ -228,11 +219,11 @@ angular.module('onebip.panel.dashboard.services', [])
     this.filterFunctions = {};
 
     [
-      ['price','floatAmount'],
-      ['connectivity','rid'],
-      ['credit_provider','cp_id'],
-      ['route','lane'],
-      ['context','rid']
+      ['price', 'floatAmount'],
+      ['connectivity', 'rid'],
+      ['credit_provider', 'cp_id'],
+      ['route', 'lane'],
+      ['context', 'rid']
     ].forEach(function(couple){
       var category = couple[0];
       var attribute = couple[1];
@@ -275,6 +266,5 @@ angular.module('onebip.panel.dashboard.services', [])
     this.allContextsFiltered = function(contexts){
       return contexts.every(function(curr){ return curr.filtered; });
     }
-
-})
+});
 
