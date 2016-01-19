@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('onebip.panel.dashboard.directives', [])
-
 .directive('dashboardInputFilter', [function() {
   return {
     restrict: 'E',
@@ -15,7 +14,6 @@ angular.module('onebip.panel.dashboard.directives', [])
     replace: true
   }
 }])
-
 .directive('dashboardSelectFilter', [function() {
   return {
     restrict: 'E',
