@@ -5,6 +5,8 @@ Start an [http-server](https://www.npmjs.com/package/http-server) (get it from n
 - http://localhost:8080/main.html
 
 Let the dance begin!
+
+
 ![main.html](https://raw.githubusercontent.com/Muzietto/angularities/master/img/main.html.jpg)
 
 
